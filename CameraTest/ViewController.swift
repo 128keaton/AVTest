@@ -34,6 +34,7 @@ class ViewController: NSViewController {
         plot.plotType = .rolling
         plot.shouldFill = true
         plot.shouldMirror = true
+        plot.gain = 5.0
         plot.color = NSColor.white
         plot.backgroundColor = NSColor.black
         plot.autoresizingMask = NSView.AutoresizingMask.width
