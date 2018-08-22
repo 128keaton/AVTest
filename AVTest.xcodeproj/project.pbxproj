@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A8D4AE9212DCAEA00B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */; };
-		8A8D4AEA212DCAEA00B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */; };
-		8A8D4AEB212DCC2100B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */; };
-		8A8D4AEC212DCC2100B8526B /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8A8D4AED212DCC2100B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */; };
-		8A8D4AEE212DCC2100B8526B /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A8D4AF9212DCDAE00B8526B /* AudioPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */; };
-		8A8D4AFE212DDF1500B8526B /* ISSoundAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D4AFD212DDF1500B8526B /* ISSoundAdditions.m */; };
 		8A8D4B00212DDF3200B8526B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */; };
+		8A8D4B02212DEB8F00B8526B /* ISSoundAdditions in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D4B01212DEB8F00B8526B /* ISSoundAdditions */; };
+		8A8D4B05212DEBD100B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; };
+		8A8D4B06212DEBD100B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; };
+		8A8D4B07212DEBD900B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; };
+		8A8D4B08212DEBD900B8526B /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A8D4B09212DEBD900B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; };
+		8A8D4B0A212DEBD900B8526B /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8AB1DAC3212DBD6600B104BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */; };
 		8AB1DAC5212DBD6600B104BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC4212DBD6600B104BC /* ViewController.swift */; };
 		8AB1DAC7212DBD6600B104BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC6212DBD6600B104BC /* Assets.xcassets */; };
@@ -30,8 +30,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8A8D4AEE212DCC2100B8526B /* AudioKitUI.framework in Embed Frameworks */,
-				8A8D4AEC212DCC2100B8526B /* AudioKit.framework in Embed Frameworks */,
+				8A8D4B0A212DEBD900B8526B /* AudioKitUI.framework in Embed Frameworks */,
+				8A8D4B08212DEBD900B8526B /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,14 +39,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
-		8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
 		8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPreview.swift; sourceTree = "<group>"; };
-		8A8D4AFB212DDF1400B8526B /* CameraTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CameraTest-Bridging-Header.h"; sourceTree = "<group>"; };
-		8A8D4AFC212DDF1500B8526B /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSoundAdditions.h; sourceTree = "<group>"; };
-		8A8D4AFD212DDF1500B8526B /* ISSoundAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISSoundAdditions.m; sourceTree = "<group>"; };
 		8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		8AB1DABF212DBD6600B104BC /* CameraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8D4B01212DEB8F00B8526B /* ISSoundAdditions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ISSoundAdditions; sourceTree = "<group>"; };
+		8A8D4B03212DEBD100B8526B /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
+		8AB1DABF212DBD6600B104BC /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AB1DAC4212DBD6600B104BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8AB1DAC6212DBD6600B104BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,11 +59,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8D4B07212DEBD900B8526B /* AudioKit.framework in Frameworks */,
+				8A8D4B06212DEBD100B8526B /* AudioKitUI.framework in Frameworks */,
+				8A8D4B09212DEBD900B8526B /* AudioKitUI.framework in Frameworks */,
+				8A8D4B05212DEBD100B8526B /* AudioKit.framework in Frameworks */,
 				8A8D4B00212DDF3200B8526B /* CoreAudio.framework in Frameworks */,
-				8A8D4AED212DCC2100B8526B /* AudioKitUI.framework in Frameworks */,
-				8A8D4AEB212DCC2100B8526B /* AudioKit.framework in Frameworks */,
-				8A8D4AEA212DCAEA00B8526B /* AudioKitUI.framework in Frameworks */,
-				8A8D4AE9212DCAEA00B8526B /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,20 +78,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8A8D4AFA212DDF0600B8526B /* ISSoundAdditions */ = {
-			isa = PBXGroup;
-			children = (
-				8A8D4AFC212DDF1500B8526B /* ISSoundAdditions.h */,
-				8A8D4AFD212DDF1500B8526B /* ISSoundAdditions.m */,
-				8A8D4AFB212DDF1400B8526B /* CameraTest-Bridging-Header.h */,
-			);
-			path = ISSoundAdditions;
-			sourceTree = "<group>";
-		};
 		8AB1DAB6212DBD6600B104BC = {
 			isa = PBXGroup;
 			children = (
-				8AB1DAC1212DBD6600B104BC /* CameraTest */,
+				8AB1DAC1212DBD6600B104BC /* AVTest */,
 				8AB1DAC0212DBD6600B104BC /* Products */,
 				8A8D4ADF212DCA6D00B8526B /* Frameworks */,
 			);
@@ -102,17 +90,17 @@
 		8AB1DAC0212DBD6600B104BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8AB1DABF212DBD6600B104BC /* CameraTest.app */,
+				8AB1DABF212DBD6600B104BC /* AVTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8AB1DAC1212DBD6600B104BC /* CameraTest */ = {
+		8AB1DAC1212DBD6600B104BC /* AVTest */ = {
 			isa = PBXGroup;
 			children = (
-				8A8D4AFA212DDF0600B8526B /* ISSoundAdditions */,
-				8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */,
-				8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */,
+				8A8D4B03212DEBD100B8526B /* AudioKit.framework */,
+				8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */,
+				8A8D4B01212DEB8F00B8526B /* ISSoundAdditions */,
 				8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */,
 				8AB1DAC4212DBD6600B104BC /* ViewController.swift */,
 				8AB1DAC6212DBD6600B104BC /* Assets.xcassets */,
@@ -122,15 +110,15 @@
 				8AB1DAD2212DBDB900B104BC /* CameraPreview.swift */,
 				8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */,
 			);
-			path = CameraTest;
+			path = AVTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8AB1DABE212DBD6600B104BC /* CameraTest */ = {
+		8AB1DABE212DBD6600B104BC /* AVTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8AB1DACF212DBD6600B104BC /* Build configuration list for PBXNativeTarget "CameraTest" */;
+			buildConfigurationList = 8AB1DACF212DBD6600B104BC /* Build configuration list for PBXNativeTarget "AVTest" */;
 			buildPhases = (
 				8AB1DABB212DBD6600B104BC /* Sources */,
 				8AB1DABC212DBD6600B104BC /* Frameworks */,
@@ -141,9 +129,9 @@
 			);
 			dependencies = (
 			);
-			name = CameraTest;
+			name = AVTest;
 			productName = CameraTest;
-			productReference = 8AB1DABF212DBD6600B104BC /* CameraTest.app */;
+			productReference = 8AB1DABF212DBD6600B104BC /* AVTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +156,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8AB1DABA212DBD6600B104BC /* Build configuration list for PBXProject "CameraTest" */;
+			buildConfigurationList = 8AB1DABA212DBD6600B104BC /* Build configuration list for PBXProject "AVTest" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -181,7 +169,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8AB1DABE212DBD6600B104BC /* CameraTest */,
+				8AB1DABE212DBD6600B104BC /* AVTest */,
 			);
 		};
 /* End PBXProject section */
@@ -192,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AB1DAC7212DBD6600B104BC /* Assets.xcassets in Resources */,
+				8A8D4B02212DEB8F00B8526B /* ISSoundAdditions in Resources */,
 				8AB1DACA212DBD6600B104BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +196,6 @@
 				8A8D4AF9212DCDAE00B8526B /* AudioPreview.swift in Sources */,
 				8AB1DAC5212DBD6600B104BC /* ViewController.swift in Sources */,
 				8AB1DAC3212DBD6600B104BC /* AppDelegate.swift in Sources */,
-				8A8D4AFE212DDF1500B8526B /* ISSoundAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,13 +329,13 @@
 				DEVELOPMENT_TEAM = JMQ9Y3A8K6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CameraTest",
+					"$(PROJECT_DIR)/AVTest",
 				);
-				INFOPLIST_FILE = CameraTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AVTest/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.CameraTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.AVTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CameraTest/ISSoundAdditions/CameraTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AVTest/ISSoundAdditions/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -363,13 +351,13 @@
 				DEVELOPMENT_TEAM = JMQ9Y3A8K6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CameraTest",
+					"$(PROJECT_DIR)/AVTest",
 				);
-				INFOPLIST_FILE = CameraTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AVTest/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.CameraTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.AVTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CameraTest/ISSoundAdditions/CameraTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AVTest/ISSoundAdditions/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -377,7 +365,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8AB1DABA212DBD6600B104BC /* Build configuration list for PBXProject "CameraTest" */ = {
+		8AB1DABA212DBD6600B104BC /* Build configuration list for PBXProject "AVTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8AB1DACD212DBD6600B104BC /* Debug */,
@@ -386,7 +374,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8AB1DACF212DBD6600B104BC /* Build configuration list for PBXNativeTarget "CameraTest" */ = {
+		8AB1DACF212DBD6600B104BC /* Build configuration list for PBXNativeTarget "AVTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8AB1DAD0212DBD6600B104BC /* Debug */,
