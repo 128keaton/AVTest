@@ -78,7 +78,7 @@ class ViewController: NSViewController {
     
     @IBAction func playSound(sender: NSButton){
         
-        let path = Bundle.main.path(forResource: "YOUSUFFER.mp3", ofType:nil)!
+        let path = Bundle.main.path(forResource: "YOUSUFFER.m4a", ofType:nil)!
         let url = URL(fileURLWithPath: path)
         do {
             youSuffer = try AVAudioPlayer(contentsOf: url)
