@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A8D4AE9212DCAEA00B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */; };
+		8A8D4AEA212DCAEA00B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */; };
+		8A8D4AEB212DCC2100B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */; };
+		8A8D4AEC212DCC2100B8526B /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A8D4AED212DCC2100B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */; };
+		8A8D4AEE212DCC2100B8526B /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A8D4AF9212DCDAE00B8526B /* AudioPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */; };
+		8A8D4AFE212DDF1500B8526B /* ISSoundAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D4AFD212DDF1500B8526B /* ISSoundAdditions.m */; };
+		8A8D4B00212DDF3200B8526B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */; };
+		8AB1DAC3212DBD6600B104BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */; };
+		8AB1DAC5212DBD6600B104BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC4212DBD6600B104BC /* ViewController.swift */; };
+		8AB1DAC7212DBD6600B104BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC6212DBD6600B104BC /* Assets.xcassets */; };
+		8AB1DACA212DBD6600B104BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC8212DBD6600B104BC /* Main.storyboard */; };
+		8AB1DAD3212DBDB900B104BC /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAD2212DBDB900B104BC /* CameraPreview.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A8D4AEF212DCC2100B8526B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8A8D4AEE212DCC2100B8526B /* AudioKitUI.framework in Embed Frameworks */,
+				8A8D4AEC212DCC2100B8526B /* AudioKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
+		8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPreview.swift; sourceTree = "<group>"; };
+		8A8D4AFB212DDF1400B8526B /* CameraTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CameraTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A8D4AFC212DDF1500B8526B /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSoundAdditions.h; sourceTree = "<group>"; };
+		8A8D4AFD212DDF1500B8526B /* ISSoundAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISSoundAdditions.m; sourceTree = "<group>"; };
+		8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		8AB1DABF212DBD6600B104BC /* CameraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8AB1DAC4212DBD6600B104BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8AB1DAC6212DBD6600B104BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8AB1DAC9212DBD6600B104BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8AB1DACB212DBD6600B104BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AB1DACC212DBD6600B104BC /* CameraTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CameraTest.entitlements; sourceTree = "<group>"; };
+		8AB1DAD2212DBDB900B104BC /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8AB1DABC212DBD6600B104BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8D4B00212DDF3200B8526B /* CoreAudio.framework in Frameworks */,
+				8A8D4AED212DCC2100B8526B /* AudioKitUI.framework in Frameworks */,
+				8A8D4AEB212DCC2100B8526B /* AudioKit.framework in Frameworks */,
+				8A8D4AEA212DCAEA00B8526B /* AudioKitUI.framework in Frameworks */,
+				8A8D4AE9212DCAEA00B8526B /* AudioKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A8D4ADF212DCA6D00B8526B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A8D4AFA212DDF0600B8526B /* ISSoundAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D4AFC212DDF1500B8526B /* ISSoundAdditions.h */,
+				8A8D4AFD212DDF1500B8526B /* ISSoundAdditions.m */,
+				8A8D4AFB212DDF1400B8526B /* CameraTest-Bridging-Header.h */,
+			);
+			path = ISSoundAdditions;
+			sourceTree = "<group>";
+		};
+		8AB1DAB6212DBD6600B104BC = {
+			isa = PBXGroup;
+			children = (
+				8AB1DAC1212DBD6600B104BC /* CameraTest */,
+				8AB1DAC0212DBD6600B104BC /* Products */,
+				8A8D4ADF212DCA6D00B8526B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8AB1DAC0212DBD6600B104BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8AB1DABF212DBD6600B104BC /* CameraTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8AB1DAC1212DBD6600B104BC /* CameraTest */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D4AFA212DDF0600B8526B /* ISSoundAdditions */,
+				8A8D4AE7212DCAEA00B8526B /* AudioKit.framework */,
+				8A8D4AE8212DCAEA00B8526B /* AudioKitUI.framework */,
+				8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */,
+				8AB1DAC4212DBD6600B104BC /* ViewController.swift */,
+				8AB1DAC6212DBD6600B104BC /* Assets.xcassets */,
+				8AB1DAC8212DBD6600B104BC /* Main.storyboard */,
+				8AB1DACB212DBD6600B104BC /* Info.plist */,
+				8AB1DACC212DBD6600B104BC /* CameraTest.entitlements */,
+				8AB1DAD2212DBDB900B104BC /* CameraPreview.swift */,
+				8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */,
+			);
+			path = CameraTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8AB1DABE212DBD6600B104BC /* CameraTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AB1DACF212DBD6600B104BC /* Build configuration list for PBXNativeTarget "CameraTest" */;
+			buildPhases = (
+				8AB1DABB212DBD6600B104BC /* Sources */,
+				8AB1DABC212DBD6600B104BC /* Frameworks */,
+				8AB1DABD212DBD6600B104BC /* Resources */,
+				8A8D4AEF212DCC2100B8526B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CameraTest;
+			productName = CameraTest;
+			productReference = 8AB1DABF212DBD6600B104BC /* CameraTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8AB1DAB7212DBD6600B104BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Keaton Burleson";
+				TargetAttributes = {
+					8AB1DABE212DBD6600B104BC = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 8AB1DABA212DBD6600B104BC /* Build configuration list for PBXProject "CameraTest" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8AB1DAB6212DBD6600B104BC;
+			productRefGroup = 8AB1DAC0212DBD6600B104BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8AB1DABE212DBD6600B104BC /* CameraTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8AB1DABD212DBD6600B104BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB1DAC7212DBD6600B104BC /* Assets.xcassets in Resources */,
+				8AB1DACA212DBD6600B104BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8AB1DABB212DBD6600B104BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB1DAD3212DBDB900B104BC /* CameraPreview.swift in Sources */,
+				8A8D4AF9212DCDAE00B8526B /* AudioPreview.swift in Sources */,
+				8AB1DAC5212DBD6600B104BC /* ViewController.swift in Sources */,
+				8AB1DAC3212DBD6600B104BC /* AppDelegate.swift in Sources */,
+				8A8D4AFE212DDF1500B8526B /* ISSoundAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8AB1DAC8212DBD6600B104BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AB1DAC9212DBD6600B104BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8AB1DACD212DBD6600B104BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8AB1DACE212DBD6600B104BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		8AB1DAD0212DBD6600B104BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JMQ9Y3A8K6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CameraTest",
+				);
+				INFOPLIST_FILE = CameraTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.CameraTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CameraTest/ISSoundAdditions/CameraTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		8AB1DAD1212DBD6600B104BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JMQ9Y3A8K6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CameraTest",
+				);
+				INFOPLIST_FILE = CameraTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.CameraTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CameraTest/ISSoundAdditions/CameraTest-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8AB1DABA212DBD6600B104BC /* Build configuration list for PBXProject "CameraTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AB1DACD212DBD6600B104BC /* Debug */,
+				8AB1DACE212DBD6600B104BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AB1DACF212DBD6600B104BC /* Build configuration list for PBXNativeTarget "CameraTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AB1DAD0212DBD6600B104BC /* Debug */,
+				8AB1DAD1212DBD6600B104BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8AB1DAB7212DBD6600B104BC /* Project object */;
+}

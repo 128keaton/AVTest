@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="CameraTest" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="CameraTest" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About CameraTest" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit CameraTest" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CameraTest" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="CameraTest" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" texturedBackground="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="CameraTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="213"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pCF-jg-pdz" customClass="CameraPreview" customModule="CameraTest" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="230" height="173"/>
+                            </customView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LMM-CA-5rF">
+                                <rect key="frame" x="269" y="13" width="197" height="32"/>
+                                <buttonCell key="cell" type="push" title="Test Audio" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dte-dq-srx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="playSoundWithSender:" target="XfG-lQ-9wD" id="7zZ-A6-Bdy"/>
+                                </connections>
+                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="KPO-rK-Za9" customClass="AudioPreview" customModule="CameraTest" customModuleProvider="target">
+                                <rect key="frame" x="275" y="93" width="185" height="100"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="gain">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vTB-eV-Ntu">
+                                <rect key="frame" x="273" y="49" width="189" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="DeR-nV-1Mt"/>
+                                    <constraint firstAttribute="height" constant="36" id="lJg-ZP-4bu"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Clicking this button will set the system volume to max and play a noise." id="QNE-aj-yEl">
+                                    <font key="font" metaFont="system" size="9"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="pCF-jg-pdz" firstAttribute="top" secondItem="KPO-rK-Za9" secondAttribute="top" id="CeW-uC-Aex"/>
+                            <constraint firstItem="LMM-CA-5rF" firstAttribute="top" secondItem="vTB-eV-Ntu" secondAttribute="bottom" constant="8" symbolic="YES" id="FzN-XQ-xHs"/>
+                            <constraint firstItem="KPO-rK-Za9" firstAttribute="leading" secondItem="vTB-eV-Ntu" secondAttribute="leading" id="IDW-Hw-oeh"/>
+                            <constraint firstItem="vTB-eV-Ntu" firstAttribute="leading" secondItem="LMM-CA-5rF" secondAttribute="leading" id="MTL-5n-wua"/>
+                            <constraint firstAttribute="trailing" secondItem="KPO-rK-Za9" secondAttribute="trailing" constant="20" symbolic="YES" id="N5h-gv-bBJ"/>
+                            <constraint firstItem="vTB-eV-Ntu" firstAttribute="trailing" secondItem="LMM-CA-5rF" secondAttribute="trailing" id="Rxb-kg-KHi"/>
+                            <constraint firstItem="pCF-jg-pdz" firstAttribute="bottom" secondItem="LMM-CA-5rF" secondAttribute="bottom" id="ZyL-FV-7Fx"/>
+                            <constraint firstItem="KPO-rK-Za9" firstAttribute="trailing" secondItem="vTB-eV-Ntu" secondAttribute="trailing" id="bAe-CP-CQw"/>
+                            <constraint firstItem="pCF-jg-pdz" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="hIc-lZ-Mbu"/>
+                            <constraint firstItem="vTB-eV-Ntu" firstAttribute="top" secondItem="KPO-rK-Za9" secondAttribute="bottom" constant="8" symbolic="YES" id="oY5-ax-vK2"/>
+                            <constraint firstItem="KPO-rK-Za9" firstAttribute="leading" secondItem="pCF-jg-pdz" secondAttribute="trailing" constant="25" id="sBj-4c-0Rl"/>
+                            <constraint firstItem="pCF-jg-pdz" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="tX6-zm-dUr"/>
+                            <constraint firstAttribute="bottom" secondItem="pCF-jg-pdz" secondAttribute="bottom" constant="20" symbolic="YES" id="uJa-HM-gTo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="audioInputPlot" destination="KPO-rK-Za9" id="CIc-tF-FJ4"/>
+                        <outlet property="cameraPreview" destination="pCF-jg-pdz" id="Nw9-9x-NNO"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="626.5"/>
+        </scene>
+    </scenes>
+</document>
