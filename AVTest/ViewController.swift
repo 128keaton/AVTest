@@ -10,6 +10,7 @@ import Cocoa
 import AVKit
 import AudioKit
 import AudioKitUI
+import AVFoundation
 
 class ViewController: NSViewController {
     @IBOutlet var cameraPreview: CameraPreview!
@@ -18,6 +19,7 @@ class ViewController: NSViewController {
     var mic: AKMicrophone!
     var tracker: AKFrequencyTracker!
     var silence: AKBooster!
+    var youSuffer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +77,16 @@ class ViewController: NSViewController {
     }
     
     @IBAction func playSound(sender: NSButton){
-        NSSound.setSystemVolume(1.0)
-        NSSound(named: NSSound.Name(rawValue: "Sosumi"))?.play()
+        
+        let path = Bundle.main.path(forResource: "YOUSUFFER.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+        do {
+            youSuffer = try AVAudioPlayer(contentsOf: url)
+            youSuffer?.play()
+        } catch {
+            print("Unable to load file")
+        }
+      
     }
 }
 

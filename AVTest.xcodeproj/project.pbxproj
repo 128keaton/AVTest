@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		8A8D4AF9212DCDAE00B8526B /* AudioPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */; };
 		8A8D4B00212DDF3200B8526B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */; };
-		8A8D4B02212DEB8F00B8526B /* ISSoundAdditions in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D4B01212DEB8F00B8526B /* ISSoundAdditions */; };
 		8A8D4B05212DEBD100B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; };
 		8A8D4B06212DEBD100B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; };
 		8A8D4B07212DEBD900B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; };
 		8A8D4B08212DEBD900B8526B /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A8D4B09212DEBD900B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; };
 		8A8D4B0A212DEBD900B8526B /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A8D4B0C212E0AC300B8526B /* YOUSUFFER.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D4B0B212E0AC300B8526B /* YOUSUFFER.mp3 */; };
 		8AB1DAC3212DBD6600B104BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */; };
 		8AB1DAC5212DBD6600B104BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC4212DBD6600B104BC /* ViewController.swift */; };
 		8AB1DAC7212DBD6600B104BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC6212DBD6600B104BC /* Assets.xcassets */; };
@@ -41,9 +41,9 @@
 /* Begin PBXFileReference section */
 		8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPreview.swift; sourceTree = "<group>"; };
 		8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		8A8D4B01212DEB8F00B8526B /* ISSoundAdditions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ISSoundAdditions; sourceTree = "<group>"; };
 		8A8D4B03212DEBD100B8526B /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
+		8A8D4B0B212E0AC300B8526B /* YOUSUFFER.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = YOUSUFFER.mp3; sourceTree = "<group>"; };
 		8AB1DABF212DBD6600B104BC /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AB1DAC4212DBD6600B104BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +100,6 @@
 			children = (
 				8A8D4B03212DEBD100B8526B /* AudioKit.framework */,
 				8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */,
-				8A8D4B01212DEB8F00B8526B /* ISSoundAdditions */,
 				8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */,
 				8AB1DAC4212DBD6600B104BC /* ViewController.swift */,
 				8AB1DAC6212DBD6600B104BC /* Assets.xcassets */,
@@ -109,6 +108,7 @@
 				8AB1DACC212DBD6600B104BC /* CameraTest.entitlements */,
 				8AB1DAD2212DBDB900B104BC /* CameraPreview.swift */,
 				8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */,
+				8A8D4B0B212E0AC300B8526B /* YOUSUFFER.mp3 */,
 			);
 			path = AVTest;
 			sourceTree = "<group>";
@@ -180,8 +180,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AB1DAC7212DBD6600B104BC /* Assets.xcassets in Resources */,
-				8A8D4B02212DEB8F00B8526B /* ISSoundAdditions in Resources */,
 				8AB1DACA212DBD6600B104BC /* Main.storyboard in Resources */,
+				8A8D4B0C212E0AC300B8526B /* YOUSUFFER.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +335,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.AVTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AVTest/ISSoundAdditions/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -357,7 +357,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.AVTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AVTest/ISSoundAdditions/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

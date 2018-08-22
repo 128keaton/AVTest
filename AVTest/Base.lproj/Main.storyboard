@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +37,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CameraTest" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AVTest" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,12 +67,12 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="CameraTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="AVTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="213"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pCF-jg-pdz" customClass="CameraPreview" customModule="CameraTest" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pCF-jg-pdz" customClass="CameraPreview" customModule="AVTest" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="230" height="173"/>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LMM-CA-5rF">
@@ -84,7 +85,7 @@
                                     <action selector="playSoundWithSender:" target="XfG-lQ-9wD" id="7zZ-A6-Bdy"/>
                                 </connections>
                             </button>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="KPO-rK-Za9" customClass="AudioPreview" customModule="CameraTest" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="KPO-rK-Za9" customClass="AudioPreview" customModule="AVTest" customModuleProvider="target">
                                 <rect key="frame" x="275" y="93" width="185" height="100"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="gain">
@@ -101,7 +102,7 @@
                                     <constraint firstAttribute="width" constant="185" id="DeR-nV-1Mt"/>
                                     <constraint firstAttribute="height" constant="36" id="lJg-ZP-4bu"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Clicking this button will set the system volume to max and play a noise." id="QNE-aj-yEl">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Please set system to max volume before clicking the 'Test Audio' button" id="QNE-aj-yEl">
                                     <font key="font" metaFont="miniSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
