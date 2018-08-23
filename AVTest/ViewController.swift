@@ -31,6 +31,44 @@ class ViewController: NSViewController {
         silence = AKBooster(tracker, gain: 0)
     }
 
+    override func viewDidAppear() {
+        setupPlot()
+        startCameraSession()
+        
+        AudioKit.output = silence
+        AudioKit.start()
+    }
+    
+    // 😉😉
+    private func startCameraSession(){
+        cameraPreview.wantsLayer = true
+        
+        let session = AVCaptureSession()
+        session.sessionPreset = .low
+        
+        guard let device = AVCaptureDevice.default(for: .video)
+            else {
+                return
+        }
+        
+        print(device)
+        
+        let deviceInput = try! AVCaptureDeviceInput(device: device)
+        
+        let previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        previewLayer.frame = cameraPreview.bounds
+        previewLayer.videoGravity = .resizeAspectFill
+        
+        self.cameraPreview.layer?.addSublayer(previewLayer)
+        
+        if session.canAddInput(deviceInput) {
+            session.addInput(deviceInput)
+        }
+        
+        session.startRunning()
+    }
+    
+    // Sets up Waveform visualizer
     func setupPlot() {
         let plot = AKNodeOutputPlot(mic, frame: audioInputPlot.bounds)
         plot.plotType = .rolling
@@ -42,40 +80,8 @@ class ViewController: NSViewController {
         plot.autoresizingMask = NSView.AutoresizingMask.width
         audioInputPlot.addSubview(plot)
     }
-
-
-    override func viewDidAppear() {
-        setupPlot()
-        cameraPreview.wantsLayer = true
-
-        let session = AVCaptureSession()
-        session.sessionPreset = .low
-
-        guard let device = AVCaptureDevice.default(for: .video)
-            else {
-                return
-        }
-
-        print(device)
-
-        let deviceInput = try! AVCaptureDeviceInput(device: device)
-
-        let previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        previewLayer.frame = cameraPreview.bounds
-        previewLayer.videoGravity = .resizeAspectFill
-
-        self.cameraPreview.layer?.addSublayer(previewLayer)
-        //  self.view.layer?.addSublayer(previewLayer)
-        if session.canAddInput(deviceInput) {
-            session.addInput(deviceInput)
-        }
-
-        session.startRunning()
-
-        AudioKit.output = silence
-        AudioKit.start()
-    }
     
+    // Plays sound to test speakers
     @IBAction func playSound(sender: NSButton){
         
         let path = Bundle.main.path(forResource: "YOUSUFFER.m4a", ofType:nil)!

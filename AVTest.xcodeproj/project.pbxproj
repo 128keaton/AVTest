@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A14EA55212F1B540035B660 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A14EA4D212F1B400035B660 /* AudioKitUI.framework */; };
+		8A14EA56212F1B5B0035B660 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A14EA4C212F1B400035B660 /* AudioKit.framework */; };
+		8A14EA57212F1B5B0035B660 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A14EA4C212F1B400035B660 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A14EA59212F1B5B0035B660 /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A14EA4D212F1B400035B660 /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A8D4AF9212DCDAE00B8526B /* AudioPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */; };
 		8A8D4B00212DDF3200B8526B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */; };
-		8A8D4B05212DEBD100B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; };
-		8A8D4B06212DEBD100B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; };
-		8A8D4B07212DEBD900B8526B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; };
-		8A8D4B08212DEBD900B8526B /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B03212DEBD100B8526B /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8A8D4B09212DEBD900B8526B /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; };
-		8A8D4B0A212DEBD900B8526B /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A8D4B0E212E25CE00B8526B /* YOUSUFFER.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D4B0D212E25CE00B8526B /* YOUSUFFER.m4a */; };
 		8AB1DAC3212DBD6600B104BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */; };
 		8AB1DAC5212DBD6600B104BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1DAC4212DBD6600B104BC /* ViewController.swift */; };
@@ -30,8 +28,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8A8D4B0A212DEBD900B8526B /* AudioKitUI.framework in Embed Frameworks */,
-				8A8D4B08212DEBD900B8526B /* AudioKit.framework in Embed Frameworks */,
+				8A14EA59212F1B5B0035B660 /* AudioKitUI.framework in Embed Frameworks */,
+				8A14EA57212F1B5B0035B660 /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,10 +37,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A14EA4C212F1B400035B660 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		8A14EA4D212F1B400035B660 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
+		8A14EA51212F1B540035B660 /* AVTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVTest.xcodeproj; path = /Users/keatonburleson/Documents/AVTest/AVTest.xcodeproj; sourceTree = "<absolute>"; };
 		8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPreview.swift; sourceTree = "<group>"; };
 		8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		8A8D4B03212DEBD100B8526B /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
-		8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
 		8A8D4B0D212E25CE00B8526B /* YOUSUFFER.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = YOUSUFFER.m4a; sourceTree = "<group>"; };
 		8AB1DABF212DBD6600B104BC /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,23 +58,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A8D4B07212DEBD900B8526B /* AudioKit.framework in Frameworks */,
-				8A8D4B06212DEBD100B8526B /* AudioKitUI.framework in Frameworks */,
-				8A8D4B09212DEBD900B8526B /* AudioKitUI.framework in Frameworks */,
-				8A8D4B05212DEBD100B8526B /* AudioKit.framework in Frameworks */,
+				8A14EA56212F1B5B0035B660 /* AudioKit.framework in Frameworks */,
 				8A8D4B00212DDF3200B8526B /* CoreAudio.framework in Frameworks */,
+				8A14EA55212F1B540035B660 /* AudioKitUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A14EA52212F1B540035B660 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8A8D4ADF212DCA6D00B8526B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				8A8D4AFF212DDF3200B8526B /* CoreAudio.framework */,
+				8A14EA51212F1B540035B660 /* AVTest.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A8D4B0F212F1A9E00B8526B /* NSView */ = {
+			isa = PBXGroup;
+			children = (
+				8AB1DAD2212DBDB900B104BC /* CameraPreview.swift */,
+				8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */,
+			);
+			path = NSView;
+			sourceTree = "<group>";
+		};
+		8A8D4B10212F1AB800B8526B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D4B0D212E25CE00B8526B /* YOUSUFFER.m4a */,
+				8AB1DACB212DBD6600B104BC /* Info.plist */,
+				8AB1DAC6212DBD6600B104BC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8A8D4B11212F1AC900B8526B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A14EA4C212F1B400035B660 /* AudioKit.framework */,
+				8A14EA4D212F1B400035B660 /* AudioKitUI.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		8AB1DAB6212DBD6600B104BC = {
@@ -98,17 +129,13 @@
 		8AB1DAC1212DBD6600B104BC /* AVTest */ = {
 			isa = PBXGroup;
 			children = (
-				8A8D4B03212DEBD100B8526B /* AudioKit.framework */,
-				8A8D4B04212DEBD100B8526B /* AudioKitUI.framework */,
+				8A8D4B11212F1AC900B8526B /* Frameworks */,
 				8AB1DAC2212DBD6600B104BC /* AppDelegate.swift */,
 				8AB1DAC4212DBD6600B104BC /* ViewController.swift */,
-				8AB1DAC6212DBD6600B104BC /* Assets.xcassets */,
-				8AB1DAC8212DBD6600B104BC /* Main.storyboard */,
-				8AB1DACB212DBD6600B104BC /* Info.plist */,
+				8A8D4B0F212F1A9E00B8526B /* NSView */,
+				8A8D4B10212F1AB800B8526B /* Resources */,
 				8AB1DACC212DBD6600B104BC /* CameraTest.entitlements */,
-				8AB1DAD2212DBDB900B104BC /* CameraPreview.swift */,
-				8A8D4AF8212DCDAE00B8526B /* AudioPreview.swift */,
-				8A8D4B0D212E25CE00B8526B /* YOUSUFFER.m4a */,
+				8AB1DAC8212DBD6600B104BC /* Main.storyboard */,
 			);
 			path = AVTest;
 			sourceTree = "<group>";
@@ -167,6 +194,12 @@
 			mainGroup = 8AB1DAB6212DBD6600B104BC;
 			productRefGroup = 8AB1DAC0212DBD6600B104BC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8A14EA52212F1B540035B660 /* Products */;
+					ProjectRef = 8A14EA51212F1B540035B660 /* AVTest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8AB1DABE212DBD6600B104BC /* AVTest */,
@@ -330,8 +363,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AVTest",
+					"$(PROJECT_DIR)/AVTest/Frameworks",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/AVTest/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AVTest/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.AVTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,8 +386,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AVTest",
+					"$(PROJECT_DIR)/AVTest/Frameworks",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/AVTest/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AVTest/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keaton.AVTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
