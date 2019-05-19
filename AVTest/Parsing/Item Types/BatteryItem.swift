@@ -14,7 +14,16 @@ struct BatteryItem: ItemType {
     private var _installed: String
     
     var installed: Bool {
-        return _installed == "TRUE"
+        get {
+            return _installed == "TRUE"
+        }
+        set {
+            self._installed = newValue ? "TRUE" : "FALSE"
+        }
+    }
+    
+    var description: String {
+        return "Battery: \(installed)"
     }
     
     var healthInfo: BatteryHealthInfo?

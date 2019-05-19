@@ -17,7 +17,12 @@ struct HardwareItem: ItemType {
     var cpuType: String
     var cpuCores: Int
     var serialNumber: String
+    var physicalProcessorCount: Int
 
+    var description: String {
+        return "\(machineName): \(machineModel) - \(physicalMemory) - \(physicalProcessorCount)x \(cpuType) - \(cpuCores) Cores - \(serialNumber)"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case physicalMemory = "physical_memory"
         case machineName = "machine_name"
@@ -25,5 +30,6 @@ struct HardwareItem: ItemType {
         case cpuType = "cpu_type"
         case cpuCores = "number_processors"
         case serialNumber = "serial_number"
+        case physicalProcessorCount = "packages"
     }
 }

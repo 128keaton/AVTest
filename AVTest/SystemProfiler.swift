@@ -69,10 +69,16 @@ class SystemProfiler {
     static func parseInto(_ data: Data) {
         do {
             let decoder = PropertyListDecoder()
-         //   SystemProfilerData.register(NestedAudioItem.self, for: "SPAudioDataType")
-            SystemProfilerData.register([String:[DisplayItem]].self, for: "SPDisplaysDataType")
-        //    SystemProfilerData.register([PowerItem].self, for: "SPPowerDataType")
-            
+
+            SystemProfilerData.register(DisplayItem.self, for: "SPDisplaysDataType")
+            SystemProfilerData.register(HardwareItem.self, for: "SPHardwareDataType")
+            SystemProfilerData.register(NestedMemoryItem.self, for: "SPMemoryDataType")
+            SystemProfilerData.register(NestedAudioItem.self, for: "SPAudioDataType")
+            SystemProfilerData.register(PowerItem.self, for: "SPPowerDataType")
+            SystemProfilerData.register(NVMeItem.self, for: "SPNVMeDataType")
+            SystemProfilerData.register(DiscBurningItem.self, for: "DPDiscBurningDataType")
+            SystemProfilerData.register(SerialATAControllerItem.self, for: "SPSerialATADataType")
+
             let systemProfilerData = try decoder.decode([SystemProfilerData].self, from: data)
             print(systemProfilerData)
         } catch {
@@ -80,29 +86,17 @@ class SystemProfiler {
         }
     }
 
-    static func parseAudio(_ data: Data) {
-
-    }
-
-    static func parseBattery(_ data: Data) {
-
-    }
-
-    static func parseDisplay(_ data: Data) {
-
-    }
-
-    static func parseHardware(_ data: Data) {
-
-    }
-
-    static func parseMemory(_ data: Data) {
-
+    static func testParse() {
+        let fileName = "SystemProfiler"
+        let desktopURL = try! FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let filePath = desktopURL.appendingPathComponent(fileName).appendingPathExtension("plist").absoluteString
+        if let data = FileManager.default.contents(atPath: filePath.replacingOccurrences(of: "file://", with: "")) {
+            parseInto(data)
+        }
     }
 
     static func testSaveToFile(fileName: String, writeText: String) -> Bool {
         let desktopURL = try! FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        print("desktopURL: " + String(describing: desktopURL))
         let fileURL = desktopURL.appendingPathComponent(fileName).appendingPathExtension("plist")
 
         print("File Path: \(fileURL.path)")

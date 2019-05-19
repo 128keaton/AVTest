@@ -24,9 +24,7 @@
 		8A07290A228F38D900A3AEBF /* DiscBurningItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A072909228F38D900A3AEBF /* DiscBurningItem.swift */; };
 		8A07290D228F3A0100A3AEBF /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07290C228F3A0100A3AEBF /* ItemType.swift */; };
 		8A072914228F3C1900A3AEBF /* SystemProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A072913228F3C1900A3AEBF /* SystemProfiler.swift */; };
-		8A07291B228F535400A3AEBF /* NestedAudioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07291A228F535400A3AEBF /* NestedAudioItem.swift */; };
 		8A07291D228F598000A3AEBF /* PowerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07291C228F598000A3AEBF /* PowerItem.swift */; };
-		8A07291F228F5B3300A3AEBF /* ItemsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07291E228F5B3300A3AEBF /* ItemsType.swift */; };
 		8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */; };
 		8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */; };
 		8AF21CE02285E21C00D1A0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDE2285E21C00D1A0A5 /* Main.storyboard */; };
@@ -52,21 +50,17 @@
 		8A07290C228F3A0100A3AEBF /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		8A072913228F3C1900A3AEBF /* SystemProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProfiler.swift; sourceTree = "<group>"; };
 		8A072915228F410F00A3AEBF /* AVTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AVTest.entitlements; sourceTree = "<group>"; };
-		8A07291A228F535400A3AEBF /* NestedAudioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedAudioItem.swift; sourceTree = "<group>"; };
 		8A07291C228F598000A3AEBF /* PowerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerItem.swift; sourceTree = "<group>"; };
-		8A07291E228F5B3300A3AEBF /* ItemsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsType.swift; sourceTree = "<group>"; };
 		8AF21CD52285E21A00D1A0A5 /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF21CDA2285E21A00D1A0A5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AF21CDF2285E21C00D1A0A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AF21CE12285E21C00D1A0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AF21CE22285E21C00D1A0A5 /* Apple_Evaluation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apple_Evaluation.entitlements; sourceTree = "<group>"; };
 		C493AA22C54E00A1A15DD040 /* Pods-AVTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVTest.debug.xcconfig"; path = "Target Support Files/Pods-AVTest/Pods-AVTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C79E405C335266A5C45A7D71 /* Pods_AVTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF110E4E838F354AD76E398 /* Pods-AVTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVTest.release.xcconfig"; path = "Target Support Files/Pods-AVTest/Pods-AVTest.release.xcconfig"; sourceTree = "<group>"; };
 		DDB1ED7656F4A6D64CE496B8 /* Pods-Apple Evaluation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple Evaluation.release.xcconfig"; path = "Target Support Files/Pods-Apple Evaluation/Pods-Apple Evaluation.release.xcconfig"; sourceTree = "<group>"; };
-		DEE8606C344BC2ED00BBE6FD /* Pods_Apple_Evaluation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apple_Evaluation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +131,7 @@
 				8A0728F5228F349700A3AEBF /* DisplayItem.swift */,
 				8A0728F7228F352D00A3AEBF /* HardwareItem.swift */,
 				8A0728F9228F35DD00A3AEBF /* MemoryItem.swift */,
-				8A07291A228F535400A3AEBF /* NestedAudioItem.swift */,
 				8A07291C228F598000A3AEBF /* PowerItem.swift */,
-				8A07291E228F5B3300A3AEBF /* ItemsType.swift */,
 			);
 			path = "Item Types";
 			sourceTree = "<group>";
@@ -194,7 +186,6 @@
 				8A072913228F3C1900A3AEBF /* SystemProfiler.swift */,
 				8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */,
 				8AF21CDE2285E21C00D1A0A5 /* Main.storyboard */,
-				8AF21CE22285E21C00D1A0A5 /* Apple_Evaluation.entitlements */,
 			);
 			path = AVTest;
 			sourceTree = "<group>";
@@ -202,7 +193,6 @@
 		FF378F63307CC3F2A5AFD063 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DEE8606C344BC2ED00BBE6FD /* Pods_Apple_Evaluation.framework */,
 				C79E405C335266A5C45A7D71 /* Pods_AVTest.framework */,
 			);
 			name = Frameworks;
@@ -339,10 +329,8 @@
 				8A0728E5228F268A00A3AEBF /* CoreAudio.swift in Sources */,
 				8A0728F2228F33AA00A3AEBF /* AudioItem.swift in Sources */,
 				8A0728D0228F1D3900A3AEBF /* CameraPreview.swift in Sources */,
-				8A07291B228F535400A3AEBF /* NestedAudioItem.swift in Sources */,
 				8A07290D228F3A0100A3AEBF /* ItemType.swift in Sources */,
 				8A07290A228F38D900A3AEBF /* DiscBurningItem.swift in Sources */,
-				8A07291F228F5B3300A3AEBF /* ItemsType.swift in Sources */,
 				8A072907228F384200A3AEBF /* StorageItem.swift in Sources */,
 				8A072901228F368D00A3AEBF /* BatteryItem.swift in Sources */,
 				8A072914228F3C1900A3AEBF /* SystemProfiler.swift in Sources */,
@@ -485,18 +473,13 @@
 			baseConfigurationReference = C493AA22C54E00A1A15DD040 /* Pods-AVTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AVTest/AVTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JMQ9Y3A8K6;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/AVTest/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/AVTest/Assets/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -513,18 +496,13 @@
 			baseConfigurationReference = DCF110E4E838F354AD76E398 /* Pods-AVTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AVTest/AVTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JMQ9Y3A8K6;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/AVTest/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/AVTest/Assets/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = (
 					"-lstdc++",

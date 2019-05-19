@@ -14,6 +14,14 @@ class PowerItem: ItemType {
     var name: String
     var battery: BatteryItem?
     
+    
+    var description: String {
+        if let validBatteryItem = battery{
+            return "\(name): \(validBatteryItem)"
+        }
+        return "No battery installed"
+    }
+    
     required init(from decoder: Decoder) throws{
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)

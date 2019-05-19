@@ -8,9 +8,45 @@
 
 import Foundation
 
-struct SystemProfilerData: Codable {
+struct SystemProfilerData: Codable, CustomStringConvertible {
     var dataType: String
     var items: [Any]?
+
+    var description: String {
+        var descriptionString = dataType
+
+        if let items = items as? [DisplayItem] {
+            descriptionString = "Display Items: \(items)"
+        }
+
+        if let items = items as? [HardwareItem] {
+            descriptionString = "Hardware Items: \(items)"
+        }
+
+        if let items = items as? [NestedMemoryItem] {
+            descriptionString = "Memory Items: \(items)"
+        }
+        
+        if let items = items as? [NestedAudioItem] {
+            descriptionString = "Audio Items: \(items)"
+        }
+
+        if let items = items as? [PowerItem] {
+            descriptionString = "Power Items: \(items)"
+        }
+        
+        if let items = items as? [SerialATAControllerItem] {
+            if items.filter({ $0.hasDrives }).count > 0{
+                descriptionString = "SATA Drives: \(items.filter({ $0.hasDrives }))"
+            }
+            
+            if items.filter({ $0.hasDiscDrive }).count > 0{
+                descriptionString += "SATA Disc Drives: \(items.filter({ $0.hasDiscDrive }))"
+            }
+        }
+
+        return descriptionString
+    }
 
     enum CodingKeys: String, CodingKey {
         case dataType = "_dataType"
@@ -26,31 +62,11 @@ struct SystemProfilerData: Codable {
             do {
                 items = try decode(container) as? [Any]
             } catch {
-               /* if let nestedItems = checkForNested(container, decode: decode){
-                    items = nestedItems
-                }else{
-                    print("Tried to check for a nested decoding scheme, but failed.")
-                    print(error)
-                    items = nil
-                }*/
-                
-                        print(error)
+                print(error)
             }
         } else {
             items = nil
         }
-    }
-
-    private func checkForNested(_ container: KeyedDecodingContainer<CodingKeys>, decode: SystemProfilerDataDecoder) -> [Any]? {
-        do {
-            let nestedItems = try decode(container) as? [String: [Any]]
-            return nestedItems?.values.first
-        } catch {
-            print("Guess it was not nested..")
-            print("Nested Decoding Error: \(error)")
-        }
-        
-        return nil
     }
 
     func encode(to encoder: Encoder) throws {

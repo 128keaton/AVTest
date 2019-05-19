@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -203,6 +204,16 @@
                                     <action selector="printLabels:" target="XfG-lQ-9wD" id="01y-mh-pFd"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lgf-Kj-y4K">
+                                <rect key="frame" x="445" y="91" width="104" height="32"/>
+                                <buttonCell key="cell" type="push" title="Test Parse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fUC-Mo-flM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="testParse:" target="XfG-lQ-9wD" id="QtB-Dn-GLD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hid-zS-Xff" secondAttribute="trailing" constant="20" symbolic="YES" id="1Tq-Lc-gQs"/>
@@ -214,6 +225,7 @@
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="width" secondItem="2eg-yh-osx" secondAttribute="width" id="D2b-Bw-NKv"/>
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="height" secondItem="2eg-yh-osx" secondAttribute="height" id="GQO-23-1Tm"/>
                             <constraint firstItem="tyf-pk-DJN" firstAttribute="height" secondItem="2eg-yh-osx" secondAttribute="height" id="Gdg-1n-fgK"/>
+                            <constraint firstItem="Lgf-Kj-y4K" firstAttribute="centerX" secondItem="tGD-Ip-2jo" secondAttribute="centerX" id="IDA-Y4-thj"/>
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="Iqn-vN-YhG"/>
                             <constraint firstItem="kkb-wK-fka" firstAttribute="baseline" secondItem="Hid-zS-Xff" secondAttribute="baseline" id="KEL-Ay-lL3"/>
                             <constraint firstAttribute="trailing" secondItem="kkb-wK-fka" secondAttribute="trailing" constant="20" symbolic="YES" id="Pco-cc-Wcz"/>
@@ -226,6 +238,7 @@
                             <constraint firstItem="tGD-Ip-2jo" firstAttribute="centerX" secondItem="tyf-pk-DJN" secondAttribute="centerX" constant="324" id="lSq-vE-d3d"/>
                             <constraint firstAttribute="trailing" secondItem="13N-Xt-6sG" secondAttribute="trailing" constant="344" id="qU1-Id-OGJ"/>
                             <constraint firstItem="tyf-pk-DJN" firstAttribute="centerY" secondItem="2eg-yh-osx" secondAttribute="centerY" constant="217" id="uNk-0F-uYa"/>
+                            <constraint firstItem="Lgf-Kj-y4K" firstAttribute="centerY" secondItem="tyf-pk-DJN" secondAttribute="centerY" id="vfz-Ct-itl"/>
                             <constraint firstItem="kkb-wK-fka" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hid-zS-Xff" secondAttribute="trailing" constant="12" symbolic="YES" id="wuN-BR-WJf"/>
                             <constraint firstItem="tGD-Ip-2jo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="yw0-q4-MWs"/>
                         </constraints>

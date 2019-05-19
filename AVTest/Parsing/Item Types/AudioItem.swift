@@ -14,8 +14,29 @@ struct AudioItem: ItemType {
     var name: String
     var manufacturer: String
 
+    var description: String {
+        return "\(name): \(manufacturer)"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case name = "_name"
         case manufacturer = "coreaudio_device_manufacturer"
     }
 }
+
+struct NestedAudioItem: ItemType {
+    var dataType: String = "SPAudioDataType"
+    var items: [AudioItem]
+    var name: String
+    
+    var description: String {
+        return "\(name): \(items)"
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "_name"
+        case items = "_items"
+    }
+}
+
+

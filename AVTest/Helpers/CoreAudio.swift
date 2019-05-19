@@ -158,6 +158,20 @@ public class Audio {
         return deviceID
     }
     
+    static func getDefaultInputDevice() -> AudioDeviceID {
+        var propertySize = UInt32(MemoryLayout<AudioDeviceID>.size)
+        var deviceID = kAudioDeviceUnknown
+        
+        var propertyAddress = AudioObjectPropertyAddress(
+            mSelector: AudioObjectPropertySelector(kAudioHardwarePropertyDefaultInputDevice),
+            mScope: AudioObjectPropertyScope(kAudioObjectPropertyScopeGlobal),
+            mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
+        
+        AudioObjectGetPropertyData(AudioObjectID(kAudioObjectSystemObject), &propertyAddress, 0, nil, &propertySize, &deviceID)
+        
+        return deviceID
+    }
+    
     private static func getDeviceTransportType(deviceID: AudioDeviceID) -> AudioDevicePropertyID {
         var deviceTransportType = AudioDevicePropertyID()
         var propertySize = UInt32(MemoryLayout<AudioDevicePropertyID>.size)

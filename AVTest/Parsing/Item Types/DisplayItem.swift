@@ -8,24 +8,21 @@
 
 import Foundation
 
-struct DisplayItem: Codable {
+struct DisplayItem: ItemType {
     var dataType: String = "SPDisplaysDataType"
-
+    
     var graphicsCardModel: String
     var graphicsCardVRAM: String?
     var graphicsCardVRAMShared: String?
+    
+    
+    var description: String {
+        return "\(graphicsCardModel): \(graphicsCardVRAM ?? graphicsCardVRAMShared ?? "No VRAM")"
+    }
 
     enum CodingKeys: String, CodingKey {
         case graphicsCardModel = "sppci_model"
         case graphicsCardVRAM = "spdisplays_vram"
         case graphicsCardVRAMShared = "spdisplays_vram_shared"
-    }
-}
-
-struct DisplayItems: Codable {
-    var items: [DisplayItem]
-    
-    enum CodingKeys: String, CodingKey {
-        case items = "_items"
     }
 }

@@ -13,10 +13,16 @@ struct DiscBurningItem: StorageItem {
     var dataType: String = "DPDiscBurningDataType"
     
     var deviceSerialNumber: String
+    var deviceModel: String
 
     var _size: String? = nil
-
+    
+    var description: String {
+        return "\(storageItemType): \(deviceSerialNumber)"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case deviceSerialNumber = "device_serial"
+        case deviceModel = "device_model"
     }
 }

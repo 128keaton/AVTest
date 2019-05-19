@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ItemType: Codable {
+protocol ItemType: Codable, CustomStringConvertible {
     var dataType: String { get }
 }

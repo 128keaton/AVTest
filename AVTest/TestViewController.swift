@@ -19,6 +19,7 @@ class TestViewController: NSViewController {
     private var tracker: AKFrequencyTracker!
     private var silence: AKBooster!
     private var audioPlayer: AVAudioPlayer?
+    private var hasMicrophone: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,7 @@ class TestViewController: NSViewController {
     }
 
     private func getSampleRate() {
-        let inputDevice = Audio.getDefaultOutputDevice()
+        let inputDevice = Audio.getDefaultInputDevice()
         AKSettings.sampleRate = Audio.getSampleRate(deviceID: inputDevice)
     }
 
@@ -101,6 +102,25 @@ class TestViewController: NSViewController {
         audioPreview.addSubview(outputPlot)
     }
 
+    private func startAudioTest(withPlayer currentPlayer: AVAudioPlayer) {
+        DispatchQueue.main.async {
+            currentPlayer.play()
+            NotificationCenter.default.post(name: Notification.Name("AudioTestStartedFromView"), object: nil)
+            self.audioTestStarted()
+        }
+    }
+
+    private func stopAudioTest(withPlayer currentPlayer: AVAudioPlayer) {
+        DispatchQueue.main.async {
+            currentPlayer.stop()
+            currentPlayer.currentTime = 0
+
+            NotificationCenter.default.post(name: Notification.Name("AudioTestStoppedFromView"), object: nil)
+
+            self.audioTestStopped()
+        }
+    }
+
     @objc func audioPlayerReady(_ notification: Notification) {
         if let validAudioPlayer = notification.object as? AVAudioPlayer {
             self.audioPlayer = validAudioPlayer
@@ -116,25 +136,20 @@ class TestViewController: NSViewController {
         testAudioButton.title = "Start Audio Test"
     }
 
-    @IBAction func printLabels(_ sender: NSButton){
+    @IBAction func testParse(_ sender: NSButton) {
+        SystemProfiler.testParse()
+    }
+
+    @IBAction func printLabels(_ sender: NSButton) {
         SystemProfiler.getInfo()
     }
-    
+
     @IBAction func playSound(_ sender: NSButton) {
         if let currentPlayer = audioPlayer,
             currentPlayer.isPlaying {
-            currentPlayer.stop()
-            currentPlayer.currentTime = 0
-
-            NotificationCenter.default.post(name: Notification.Name("AudioTestStoppedFromView"), object: nil)
-
-            audioTestStopped()
+            stopAudioTest(withPlayer: currentPlayer)
         } else if let currentPlayer = audioPlayer {
-            currentPlayer.play()
-
-            NotificationCenter.default.post(name: Notification.Name("AudioTestStartedFromView"), object: nil)
-
-            audioTestStarted()
+            startAudioTest(withPlayer: currentPlayer)
         }
     }
 }

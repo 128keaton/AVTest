@@ -14,6 +14,11 @@ struct NVMeItem: StorageItem {
     var deviceSerialNumber: String
     var _size: String?
     
+    
+    var description: String{
+        return "\(storageItemType): \(size) - \(deviceSerialNumber)"
+    }
+    
     var size: String {
         if let validSize = _size{
             return validSize
