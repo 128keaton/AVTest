@@ -19,7 +19,21 @@ class TestViewController: NSViewController {
     private var tracker: AKFrequencyTracker!
     private var silence: AKBooster!
     private var audioPlayer: AVAudioPlayer?
-    private var hasMicrophone: Bool = true
+    private var hasMicrophone: Bool = true {
+        didSet {
+            if self.hasMicrophone == false {
+                let noMicrophoneLabel = NSTextField(frame: CGRect(x: 0, y: 0, width: audioPreview.frame.width, height: 25))
+                noMicrophoneLabel.stringValue = "No Microphone"
+                noMicrophoneLabel.textColor = .secondaryLabelColor
+                noMicrophoneLabel.alignment = .center
+                noMicrophoneLabel.font = NSFont.systemFont(ofSize: 22, weight: .medium)
+                noMicrophoneLabel.drawsBackground = false
+                audioPreview.addSubview(noMicrophoneLabel)
+                noMicrophoneLabel.centerXAnchor.constraint(equalTo: audioPreview.centerXAnchor, constant: 0).isActive = true
+                noMicrophoneLabel.centerYAnchor.constraint(equalTo: audioPreview.centerYAnchor, constant: 0).isActive = true
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +66,7 @@ class TestViewController: NSViewController {
         do {
             try AudioKit.start()
         } catch {
+            self.hasMicrophone = false
             AKLog("AudioKit did not start!")
         }
     }
