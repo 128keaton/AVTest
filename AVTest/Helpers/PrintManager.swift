@@ -32,12 +32,12 @@ class PrintManager {
             completion(false, "Data cannot be empty")
         }
 
-        if EnvironmentVariables.print_server_address.value == "" {
+        if Configuration.printServerAddress == "" {
             completion(false, "Print server address cannot be empty")
         }
 
-        guard let requestURL = URL(string: EnvironmentVariables.print_server_address.value) else {
-            completion(false, "Print server address URL generation failed: \(EnvironmentVariables.print_server_address.value)")
+        guard let requestURL = URL(string: Configuration.printServerAddress) else {
+            completion(false, "Print server address URL generation failed: \(Configuration.printServerAddress)")
             return
         }
 
