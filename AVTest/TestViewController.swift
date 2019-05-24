@@ -12,26 +12,40 @@ import AudioKitUI
 
 class TestViewController: NSViewController {
     @IBOutlet var cameraPreview: CameraPreview!
-    @IBOutlet private var testAudioButton: NSButton!
+
+    @IBOutlet private var testAudioItem: NSMenuItem!
+    @IBOutlet private var printLabelsItem: NSMenuItem!
+
     @IBOutlet private var audioPreview: AudioPreview!
 
+    @IBOutlet private var noCameraLabel: NSTextField!
+    @IBOutlet private var noMicrophoneLabel: NSTextField!
+
+    @IBOutlet private var machineModelLabel: NSTextField!
+    @IBOutlet private var machineMemoryLabel: NSTextField!
+    @IBOutlet private var machineProcessorLabel: NSTextField!
+
+    private var selectedAction: () -> () = { }
     private var mic: AKMicrophone!
     private var tracker: AKFrequencyTracker!
     private var silence: AKBooster!
     private var audioPlayer: AVAudioPlayer?
-    private var hasMicrophone: Bool = true {
-        didSet {
-            if self.hasMicrophone == false {
-                let noMicrophoneLabel = NSTextField(frame: CGRect(x: 0, y: 0, width: audioPreview.frame.width, height: 25))
-                noMicrophoneLabel.stringValue = "No Microphone"
-                noMicrophoneLabel.textColor = .secondaryLabelColor
-                noMicrophoneLabel.alignment = .center
-                noMicrophoneLabel.font = NSFont.systemFont(ofSize: 22, weight: .medium)
-                noMicrophoneLabel.drawsBackground = false
-                audioPreview.addSubview(noMicrophoneLabel)
-                noMicrophoneLabel.centerXAnchor.constraint(equalTo: audioPreview.centerXAnchor, constant: 0).isActive = true
-                noMicrophoneLabel.centerYAnchor.constraint(equalTo: audioPreview.centerYAnchor, constant: 0).isActive = true
-            }
+
+    private var hasMicrophone: Bool {
+        set {
+            self.noMicrophoneLabel.isHidden = newValue
+        }
+        get {
+            return self.noMicrophoneLabel.isHidden
+        }
+    }
+
+    private var hasCamera: Bool {
+        set {
+            self.noCameraLabel.isHidden = newValue
+        }
+        get {
+            return self.noCameraLabel.isHidden
         }
     }
 
@@ -39,14 +53,18 @@ class TestViewController: NSViewController {
         super.viewDidLoad()
         self.view.wantsLayer = true
 
-        testAudioButton.isEnabled = false
+        testAudioItem.isEnabled = false
+        selectedAction = playSound
 
         NotificationCenter.default.addObserver(self, selector: #selector(audioPlayerReady(_:)), name: Notification.Name("AudioPlayerReady"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStarted), name: Notification.Name("AudioTestStartedFromMenu"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStopped), name: Notification.Name("AudioTestStoppedFromMenu"), object: nil)
 
+                SystemProfiler.testGetInfo()
+        
         setupAudioKit()
     }
+    
 
     private func getSampleRate() {
         let inputDevice = Audio.getDefaultInputDevice()
@@ -87,6 +105,7 @@ class TestViewController: NSViewController {
 
         guard let device = AVCaptureDevice.default(for: .video)
             else {
+                hasCamera = false
                 return
         }
 
@@ -139,27 +158,36 @@ class TestViewController: NSViewController {
     @objc func audioPlayerReady(_ notification: Notification) {
         if let validAudioPlayer = notification.object as? AVAudioPlayer {
             self.audioPlayer = validAudioPlayer
-            self.testAudioButton.isEnabled = true
+            self.testAudioItem.isEnabled = true
         }
     }
 
     @objc func audioTestStarted() {
-        testAudioButton.title = "Stop Audio Test"
+        testAudioItem.title = "Stop Audio Test"
     }
 
     @objc func audioTestStopped() {
-        testAudioButton.title = "Start Audio Test"
+        testAudioItem.title = "Start Audio Test"
     }
 
-    @IBAction func testParse(_ sender: NSButton) {
-        SystemProfiler.testParse()
+    @IBAction func performAction(_ sender: NSButton) {
+        selectedAction()
     }
 
-    @IBAction func printLabels(_ sender: NSButton) {
-        SystemProfiler.getInfo()
+    @IBAction func actionChanged(_ sender: NSPopUpButton) {
+        if sender.selectedItem == testAudioItem {
+            selectedAction = playSound
+        } else if sender.selectedItem == printLabelsItem {
+            selectedAction = printLabels
+        }
     }
 
-    @IBAction func playSound(_ sender: NSButton) {
+    private func printLabels() {
+        SystemProfiler.testGetInfo()
+        //  SystemProfiler.getInfo()
+    }
+
+    private func playSound() {
         if let currentPlayer = audioPlayer,
             currentPlayer.isPlaying {
             stopAudioTest(withPlayer: currentPlayer)

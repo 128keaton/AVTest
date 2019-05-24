@@ -41,6 +41,31 @@ class SystemProfiler {
         readHandle?.readInBackgroundAndNotify()
     }
 
+    public static func testGetInfo() {
+        let launchPath = "/usr/sbin/system_profiler"
+        if !FileManager.default.isExecutableFile(atPath: launchPath) {
+            return
+        }
+
+        let infoTask = Process()
+        let standardPipe = Pipe()
+
+        infoTask.launchPath = launchPath
+        infoTask.arguments = ["-xml", "-detailLevel", "full", "SPAudioDataType", "SPBluetoothDataType", "SPCameraDataType", "SPCardReaderDataType", "SPDiagnosticsDataType", "SPDisplaysDataType", "SPHardwareDataType", "SPMemoryDataType", "SPNetworkDataType", "SPPowerDataType", "SPNVMeDataType", "SPAirPortDataType", "SPSerialATADataType", "DPDiscBurningDataType"]
+
+        infoTask.standardOutput = standardPipe
+
+
+        let readHandle = standardPipe.fileHandleForReading
+
+        NotificationCenter.default.addObserver(self, selector: #selector(savePropertyListData(_:)), name: FileHandle.readCompletionNotification, object: readHandle)
+        NotificationCenter.default.addObserver(self, selector: #selector(parsePropertyListData(_:)), name: Process.didTerminateNotification, object: nil)
+
+        infoTask.launch()
+        readHandle.readInBackgroundAndNotify()
+
+    }
+
     @objc static func savePropertyListData(_ notification: Notification) {
         if let fileHandle = notification.object as? FileHandle,
             let userInfo = notification.userInfo as? [String: Any],
@@ -57,11 +82,8 @@ class SystemProfiler {
         // Cooldown :)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             print("Done!")
-            if self.propertyListData.count > 0,
-                let rawPropertyList = String(data: self.propertyListData, encoding: .utf8),
-                self.testSaveToFile(fileName: "SystemProfiler", writeText: rawPropertyList) {
+            if self.propertyListData.count > 0{
                 self.parseInto(self.propertyListData)
-                print("Wrote file!")
             }
         }
     }
@@ -84,29 +106,5 @@ class SystemProfiler {
         } catch {
             print(error)
         }
-    }
-
-    static func testParse() {
-        let fileName = "SystemProfiler"
-        let desktopURL = try! FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let filePath = desktopURL.appendingPathComponent(fileName).appendingPathExtension("plist").absoluteString
-        if let data = FileManager.default.contents(atPath: filePath.replacingOccurrences(of: "file://", with: "")) {
-            parseInto(data)
-        }
-    }
-
-    static func testSaveToFile(fileName: String, writeText: String) -> Bool {
-        let desktopURL = try! FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let fileURL = desktopURL.appendingPathComponent(fileName).appendingPathExtension("plist")
-
-        print("File Path: \(fileURL.path)")
-
-        do {
-            try writeText.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
-        } catch let error as NSError {
-            print("Error: fileURL failed to write: \n\(error)")
-            return false
-        }
-        return true
     }
 }

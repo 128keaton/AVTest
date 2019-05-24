@@ -31,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(fileURLWithPath: path)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.delegate = self
             NotificationCenter.default.post(name: Notification.Name("AudioPlayerReady"), object: audioPlayer)
         } catch {
             print("Unable to load file")
@@ -65,3 +66,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+extension AppDelegate: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        NotificationCenter.default.post(name: Notification.Name("AudioTestStoppedFromMenu"), object: nil)
+        audioTestStopped()
+    }
+}

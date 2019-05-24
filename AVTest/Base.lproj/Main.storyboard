@@ -159,6 +159,20 @@
                                 <view key="contentView" id="UkE-aL-njo" customClass="CameraPreview" customModule="AVTest" customModuleProvider="target">
                                     <rect key="frame" x="3" y="3" width="305" height="159"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m99-65-knr">
+                                            <rect key="frame" x="94" y="66" width="118" height="27"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="No Camera" id="hGf-8s-Kde">
+                                                <font key="font" metaFont="systemMedium" size="22"/>
+                                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="m99-65-knr" firstAttribute="centerY" secondItem="UkE-aL-njo" secondAttribute="centerY" id="af5-vR-cBC"/>
+                                        <constraint firstItem="m99-65-knr" firstAttribute="centerX" secondItem="UkE-aL-njo" secondAttribute="centerX" id="hwl-Dd-v5K"/>
+                                    </constraints>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="13N-Xt-6sG" secondAttribute="height" multiplier="305:177" id="poh-pF-Lgu"/>
@@ -170,88 +184,150 @@
                                 <view key="contentView" id="RlS-Me-8Tf" customClass="AudioPreview" customModule="AVTest" customModuleProvider="target">
                                     <rect key="frame" x="3" y="3" width="305" height="159"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fli-I4-lPh">
+                                            <rect key="frame" x="73" y="66" width="159" height="27"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="No Microphone" id="QZK-aC-PkA">
+                                                <font key="font" metaFont="systemMedium" size="22"/>
+                                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fli-I4-lPh" firstAttribute="centerY" secondItem="RlS-Me-8Tf" secondAttribute="centerY" id="agL-q4-Szj"/>
+                                        <constraint firstItem="fli-I4-lPh" firstAttribute="centerX" secondItem="RlS-Me-8Tf" secondAttribute="centerX" id="tqZ-0N-Q3C"/>
+                                    </constraints>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2eg-yh-osx" secondAttribute="height" multiplier="305:177" id="ZDN-31-7fG"/>
                                 </constraints>
                                 <font key="titleFont" metaFont="systemMedium" size="12"/>
                             </box>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hid-zS-Xff">
-                                <rect key="frame" x="366" y="13" width="138" height="32"/>
-                                <buttonCell key="cell" type="push" title="Start Audio Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6RN-IS-g7u">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="playSound:" target="XfG-lQ-9wD" id="IhS-pc-gtS"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tGD-Ip-2jo">
-                                <rect key="frame" x="370" y="603" width="253" height="29"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Welcome to AVTest" id="MCU-vJ-egk">
-                                    <font key="font" metaFont="systemMedium" size="24"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0mm-Qu-Cfp">
+                                <rect key="frame" x="441" y="524" width="111" height="39"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="AVTest" id="TwO-U5-HAy">
+                                    <font key="font" metaFont="systemMedium" size="33"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kkb-wK-fka">
-                                <rect key="frame" x="543" y="13" width="112" height="32"/>
-                                <buttonCell key="cell" type="push" title="Print Labels" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tfX-zQ-W5I">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gr3-UO-mku">
+                                <rect key="frame" x="408" y="331" width="177" height="177"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="177" id="mpu-Pf-pzC"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="AppIcon" id="pAO-Hg-rcK"/>
+                            </imageView>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FHL-Qq-5bI">
+                                <rect key="frame" x="406" y="17" width="147" height="25"/>
+                                <popUpButtonCell key="cell" type="push" title="Start Audio Test" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" selectedItem="Sqy-1c-Rhu" id="fgG-J8-jui">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="2E7-3G-2Ur">
+                                        <items>
+                                            <menuItem title="Start Audio Test" state="on" id="Sqy-1c-Rhu">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Print Labels" id="P03-98-HfC"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="actionChanged:" target="XfG-lQ-9wD" id="s1Q-8c-ejY"/>
+                                </connections>
+                            </popUpButton>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aOV-bD-KoK">
+                                <rect key="frame" x="555" y="20" width="30" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Tg1-72-gz6"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSFollowLinkFreestandingTemplate" imagePosition="right" alignment="center" imageScaling="proportionallyDown" inset="2" id="E7O-a3-3zf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="printLabels:" target="XfG-lQ-9wD" id="01y-mh-pFd"/>
+                                    <action selector="performAction:" target="XfG-lQ-9wD" id="B18-il-wnk"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lgf-Kj-y4K">
-                                <rect key="frame" x="445" y="91" width="104" height="32"/>
-                                <buttonCell key="cell" type="push" title="Test Parse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fUC-Mo-flM">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dh4-rc-AVa">
+                                <rect key="frame" x="408" y="231" width="177" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Machine Model" drawsBackground="YES" id="L4G-SZ-DWD">
                                     <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="testParse:" target="XfG-lQ-9wD" id="QtB-Dn-GLD"/>
-                                </connections>
-                            </button>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cRD-5x-lCU">
+                                <rect key="frame" x="408" y="199" width="177" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Intel i5" drawsBackground="YES" id="42h-yb-T9P">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vz7-hG-UQ6">
+                                <rect key="frame" x="408" y="167" width="177" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="8GB" drawsBackground="YES" id="s3J-fo-1di">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hid-zS-Xff" secondAttribute="trailing" constant="20" symbolic="YES" id="1Tq-Lc-gQs"/>
                             <constraint firstItem="tyf-pk-DJN" firstAttribute="width" secondItem="2eg-yh-osx" secondAttribute="width" id="1gq-aV-mkm"/>
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="top" secondItem="2eg-yh-osx" secondAttribute="top" constant="-218" id="1kW-3S-K5Y"/>
-                            <constraint firstItem="Hid-zS-Xff" firstAttribute="top" secondItem="2eg-yh-osx" secondAttribute="bottom" constant="196" id="2ks-m2-yUC"/>
+                            <constraint firstItem="0mm-Qu-Cfp" firstAttribute="centerX" secondItem="gr3-UO-mku" secondAttribute="centerX" id="2Zp-bl-nni"/>
+                            <constraint firstItem="vz7-hG-UQ6" firstAttribute="trailing" secondItem="Dh4-rc-AVa" secondAttribute="trailing" id="47S-H7-i9w"/>
+                            <constraint firstItem="vz7-hG-UQ6" firstAttribute="trailing" secondItem="gr3-UO-mku" secondAttribute="trailing" id="67E-m2-92r"/>
+                            <constraint firstItem="vz7-hG-UQ6" firstAttribute="leading" secondItem="FHL-Qq-5bI" secondAttribute="leading" id="8Ne-hb-EWg"/>
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="8QE-I8-n0I"/>
-                            <constraint firstItem="tGD-Ip-2jo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="13N-Xt-6sG" secondAttribute="trailing" constant="8" symbolic="YES" id="A0G-Rm-u57"/>
+                            <constraint firstItem="FHL-Qq-5bI" firstAttribute="bottom" secondItem="tyf-pk-DJN" secondAttribute="bottom" id="8RT-Xv-mCR"/>
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="width" secondItem="2eg-yh-osx" secondAttribute="width" id="D2b-Bw-NKv"/>
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="height" secondItem="2eg-yh-osx" secondAttribute="height" id="GQO-23-1Tm"/>
                             <constraint firstItem="tyf-pk-DJN" firstAttribute="height" secondItem="2eg-yh-osx" secondAttribute="height" id="Gdg-1n-fgK"/>
-                            <constraint firstItem="Lgf-Kj-y4K" firstAttribute="centerX" secondItem="tGD-Ip-2jo" secondAttribute="centerX" id="IDA-Y4-thj"/>
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="Iqn-vN-YhG"/>
-                            <constraint firstItem="kkb-wK-fka" firstAttribute="baseline" secondItem="Hid-zS-Xff" secondAttribute="baseline" id="KEL-Ay-lL3"/>
-                            <constraint firstAttribute="trailing" secondItem="kkb-wK-fka" secondAttribute="trailing" constant="20" symbolic="YES" id="Pco-cc-Wcz"/>
+                            <constraint firstAttribute="trailing" secondItem="gr3-UO-mku" secondAttribute="trailing" constant="84" id="KET-d1-vgq"/>
+                            <constraint firstItem="0mm-Qu-Cfp" firstAttribute="centerY" secondItem="13N-Xt-6sG" secondAttribute="centerY" id="L1n-RP-Y1k"/>
+                            <constraint firstAttribute="bottom" secondItem="vz7-hG-UQ6" secondAttribute="bottom" constant="167" id="Lgi-Sb-dbx"/>
+                            <constraint firstItem="aOV-bD-KoK" firstAttribute="leading" secondItem="FHL-Qq-5bI" secondAttribute="trailing" constant="5" id="N7W-VU-c6s"/>
+                            <constraint firstItem="vz7-hG-UQ6" firstAttribute="leading" secondItem="Dh4-rc-AVa" secondAttribute="leading" id="Nrz-yt-d6o"/>
+                            <constraint firstItem="gr3-UO-mku" firstAttribute="top" secondItem="0mm-Qu-Cfp" secondAttribute="bottom" constant="16" id="P2j-dl-CWs"/>
                             <constraint firstAttribute="trailing" secondItem="tyf-pk-DJN" secondAttribute="trailing" constant="344" id="QFu-sf-9RG"/>
+                            <constraint firstItem="FHL-Qq-5bI" firstAttribute="trailing" secondItem="gr3-UO-mku" secondAttribute="trailing" constant="-35" id="Rdv-gK-y5z"/>
+                            <constraint firstItem="vz7-hG-UQ6" firstAttribute="trailing" secondItem="aOV-bD-KoK" secondAttribute="trailing" id="UJ6-ZY-S9k"/>
                             <constraint firstItem="2eg-yh-osx" firstAttribute="leading" secondItem="13N-Xt-6sG" secondAttribute="trailing" constant="-305" id="UL6-ZW-Hpj"/>
                             <constraint firstAttribute="trailing" secondItem="2eg-yh-osx" secondAttribute="trailing" constant="344" id="WDy-Mc-hFD"/>
-                            <constraint firstAttribute="trailing" secondItem="tGD-Ip-2jo" secondAttribute="trailing" constant="48" id="WSw-V9-rWN"/>
+                            <constraint firstItem="vz7-hG-UQ6" firstAttribute="leading" secondItem="cRD-5x-lCU" secondAttribute="leading" id="X2k-xN-A2l"/>
                             <constraint firstItem="13N-Xt-6sG" firstAttribute="baseline" secondItem="2eg-yh-osx" secondAttribute="baseline" constant="-218" id="bAb-3p-yae"/>
-                            <constraint firstItem="Hid-zS-Xff" firstAttribute="leading" secondItem="2eg-yh-osx" secondAttribute="leading" constant="352" id="gl0-FW-xGz"/>
-                            <constraint firstItem="tGD-Ip-2jo" firstAttribute="centerX" secondItem="tyf-pk-DJN" secondAttribute="centerX" constant="324" id="lSq-vE-d3d"/>
+                            <constraint firstItem="gr3-UO-mku" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="144" id="cEK-cK-fLm"/>
+                            <constraint firstItem="vz7-hG-UQ6" firstAttribute="trailing" secondItem="cRD-5x-lCU" secondAttribute="trailing" id="iem-X7-I7z"/>
+                            <constraint firstItem="aOV-bD-KoK" firstAttribute="top" secondItem="FHL-Qq-5bI" secondAttribute="top" id="jcn-RF-6st"/>
+                            <constraint firstItem="gr3-UO-mku" firstAttribute="leading" secondItem="13N-Xt-6sG" secondAttribute="trailing" constant="83" id="nCb-gW-EIK"/>
                             <constraint firstAttribute="trailing" secondItem="13N-Xt-6sG" secondAttribute="trailing" constant="344" id="qU1-Id-OGJ"/>
                             <constraint firstItem="tyf-pk-DJN" firstAttribute="centerY" secondItem="2eg-yh-osx" secondAttribute="centerY" constant="217" id="uNk-0F-uYa"/>
-                            <constraint firstItem="Lgf-Kj-y4K" firstAttribute="centerY" secondItem="tyf-pk-DJN" secondAttribute="centerY" id="vfz-Ct-itl"/>
-                            <constraint firstItem="kkb-wK-fka" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hid-zS-Xff" secondAttribute="trailing" constant="12" symbolic="YES" id="wuN-BR-WJf"/>
-                            <constraint firstItem="tGD-Ip-2jo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="yw0-q4-MWs"/>
+                            <constraint firstItem="cRD-5x-lCU" firstAttribute="top" secondItem="Dh4-rc-AVa" secondAttribute="bottom" constant="10" symbolic="YES" id="xBq-a2-Myn"/>
+                            <constraint firstItem="FHL-Qq-5bI" firstAttribute="leading" secondItem="gr3-UO-mku" secondAttribute="leading" id="xOO-Lz-qNx"/>
+                            <constraint firstItem="vz7-hG-UQ6" firstAttribute="top" secondItem="cRD-5x-lCU" secondAttribute="bottom" constant="10" symbolic="YES" id="ysf-23-tym"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="audioPreview" destination="RlS-Me-8Tf" id="8Lc-cN-8AH"/>
                         <outlet property="cameraPreview" destination="UkE-aL-njo" id="Stb-pn-MuA"/>
-                        <outlet property="testAudioButton" destination="Hid-zS-Xff" id="Wj5-xU-39d"/>
+                        <outlet property="noCameraLabel" destination="m99-65-knr" id="pDS-MT-80B"/>
+                        <outlet property="noMicrophoneLabel" destination="fli-I4-lPh" id="69f-a0-H6l"/>
+                        <outlet property="printLabelsItem" destination="P03-98-HfC" id="06J-lO-2mQ"/>
+                        <outlet property="testAudioItem" destination="Sqy-1c-Rhu" id="zFE-xY-ITO"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="250"/>
+            <point key="canvasLocation" x="848.5" y="250"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIcon" width="128" height="128"/>
+        <image name="NSFollowLinkFreestandingTemplate" width="14" height="14"/>
+    </resources>
 </document>
