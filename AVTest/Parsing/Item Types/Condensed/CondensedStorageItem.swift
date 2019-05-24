@@ -12,24 +12,30 @@ struct CondensedStorageItem: Encodable {
     var deviceSerialNumber: String
     var storageItemType: String
     var storageDeviceSize: Double?
+    var manufacturer: String
     var isDiscDrive: Bool = false
+    var isSDD: Bool = false
+    var model: String
 
     init(from storageItem: StorageItem) {
-        deviceSerialNumber = storageItem.deviceSerialNumber
+        self.deviceSerialNumber = storageItem.deviceSerialNumber
 
-        print(storageItem._size!.filter("01234567890.".contains))
         if let validSize = storageItem._size,
-            let validDoubleSize = Double(validSize.filter("01234567890.".contains)) {
-            storageDeviceSize = validDoubleSize.rounded()
+            let doubleSize = Double(validSize.filter("01234567890.".contains)) {
+            self.storageDeviceSize = doubleSize.rounded()
         } else {
-            isDiscDrive = true
+            self.isDiscDrive = true
         }
 
         if storageItem.storageItemType == "SerialATA" {
-            storageItemType = "SATA"
+            self.storageItemType = "SATA"
         } else {
-            storageItemType = "NVMe"
+            self.storageItemType = "NVMe"
         }
+
+        self.isSDD = storageItem.isSSD
+        self.model = storageItem.name
+        self.manufacturer = storageItem.manufacturer
     }
 
     enum CodingKeys: String, CodingKey {
@@ -37,5 +43,6 @@ struct CondensedStorageItem: Encodable {
         case storageItemType = "connection"
         case storageDeviceSize = "size"
         case isDiscDrive = "discDrive"
+        case manufacturer, model
     }
 }

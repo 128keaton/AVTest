@@ -12,8 +12,13 @@ struct CondensedSystemProfilerData: Encodable {
     var model: String?
     var serialNumber: String?
     var processorInfo: String?
+    var numberOfCores: Int?
     var numberOfProcessors: Int?
+    var memory: [MemoryItem]?
+    var configurationCode: String?
     var totalMemory: String?
+    var l2CacheSize: String?
+    var l3CacheSize: String?
 
     var storageDevices: [CondensedStorageItem]? = []
     var discDrives: [CondensedStorageItem]? = []
@@ -22,10 +27,10 @@ struct CondensedSystemProfilerData: Encodable {
     var batteryHealth: CondensedBatteryHealth?
 
     enum CodingKeys: String, CodingKey {
-        case storageDevices, graphicsCards, discDrives, numberOfProcessors, serialNumber, model
+        case storageDevices, graphicsCards, discDrives, numberOfProcessors, serialNumber, model, numberOfCores, memory, l2CacheSize, l3CacheSize
         case batteryHealth = "battery"
         case processorInfo = "processor"
-        case totalMemory = "memory"
+        case totalMemory = "totalMemory"
     }
 
     init(from systemProfilerData: [SystemProfilerData]) {
@@ -36,7 +41,10 @@ struct CondensedSystemProfilerData: Encodable {
             totalMemory = hardwareInformation.physicalMemory
             serialNumber = hardwareInformation.serialNumber
             numberOfProcessors = hardwareInformation.physicalProcessorCount
+            numberOfCores = hardwareInformation.cpuCores
             model = hardwareInformation.machineModel
+            l3CacheSize = hardwareInformation.l3CacheSize
+            l2CacheSize = hardwareInformation.l2CacheSize
         }
 
         if let batteryHealthDataItem = systemProfilerData.first(where: { $0.batteryHealth != nil }) {
@@ -60,6 +68,10 @@ struct CondensedSystemProfilerData: Encodable {
         if let NVMeDataItem = systemProfilerData.first(where: { $0.NVMeStorageDevices != nil }) {
             let condensedItems = NVMeDataItem.NVMeStorageDevices!.map { CondensedStorageItem(from: $0) }
             self.storageDevices?.append(contentsOf: condensedItems)
+        }
+        
+        if let memoryDataItem = systemProfilerData.first(where: { $0.memoryItems != nil }) {
+            self.memory = memoryDataItem.memoryItems!
         }
     }
 }

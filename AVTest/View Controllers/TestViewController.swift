@@ -61,6 +61,7 @@ class TestViewController: NSViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(audioPlayerReady(_:)), name: Notification.Name("AudioPlayerReady"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStarted), name: Notification.Name("AudioTestStartedFromMenu"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStopped), name: Notification.Name("AudioTestStoppedFromMenu"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handlePrint), name: Notification.Name("PrintLabelFromMenu"), object: nil)
 
         SystemProfiler.delegate = self
         SystemProfiler.getInfo()
@@ -189,6 +190,7 @@ class TestViewController: NSViewController {
         let alert = NSAlert()
         alert.messageText = title
         alert.informativeText = text
+        alert.alertStyle = title.contains("Error") ? .critical : .informational
         alert.runModal()
     }
 
@@ -196,35 +198,38 @@ class TestViewController: NSViewController {
         NSAlert(error: error).runModal()
     }
 
-    private func handleJSONData(_ jsonData: Data) {
-        if let jsonString = String(data: jsonData, encoding: .utf8) {
-            print(jsonString)
-        }
-    }
-}
-
-extension TestViewController: MachineInformationViewDelegate {
-    func printButtonClicked() {
+    @objc private func handlePrint() {
         if let hardwareDataItem = systemProfilerData.first(where: { $0.dataType == "SPHardwareDataType" }),
             let hardwareItem = hardwareDataItem.items?.first(where: { type(of: $0) == HardwareItem.self }) as? HardwareItem,
             let machineInformationView = self.machineInformationView {
 
             hardwareItem.cpuType = machineInformationView.machineProcesser
             hardwareItem.physicalMemory = machineInformationView.machineMemory
-            hardwareItem.machineModel = machineInformationView.machineModel
+            hardwareItem.configurationCode = machineInformationView.machineModel
 
+            let testingNotes = self.testingNotesTextView.string.appending("\n\n\(hardwareItem.configurationCode)")
             let condensedSystemProfilerData = CondensedSystemProfilerData(from: systemProfilerData)
-            let evaluation = Evaluation(testingNotes: self.testingNotesTextView.string, condensedData: condensedSystemProfilerData)
-
-            print(systemProfilerData)
+            let evaluation = Evaluation(testingNotes: testingNotes, condensedData: condensedSystemProfilerData)
 
             do {
                 let encodedEvaluationData = try JSONEncoder().encode(evaluation)
-                self.handleJSONData(encodedEvaluationData)
+                PrintManager.printJSONData(encodedEvaluationData) { (success, message) in
+                    if(!success) {
+                        self.displayAlert(title: "Error", text: message)
+                    } else {
+                        self.displayAlert(title: message, text: "Label was printed")
+                    }
+                }
             } catch {
                 handleError(error)
             }
         }
+    }
+}
+
+extension TestViewController: MachineInformationViewDelegate {
+    func printButtonClicked() {
+        self.handlePrint()
     }
 }
 

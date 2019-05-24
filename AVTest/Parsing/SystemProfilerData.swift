@@ -48,6 +48,12 @@ struct SystemProfilerData: Codable, CustomStringConvertible {
         }
         return nil
     }
+    
+    var memoryItems: [MemoryItem]? {
+        return self.dataType == "SPMemoryDataType" ? (self.items as? [NestedMemoryItem]).flatMap { nestedMemoryItem in
+            return nestedMemoryItem.flatMap { $0.items }
+            }: nil
+    }
 
     var description: String {
         var descriptionString = dataType

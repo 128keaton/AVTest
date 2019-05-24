@@ -41,16 +41,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    @objc func canPrintLabel(){
+    @objc func canPrintLabel() {
         printMenuItem.isEnabled = true
     }
-    
+
     @objc func audioTestStarted() {
         audioTestMenuItem.title = "Stop Audio Test"
     }
 
     @objc func audioTestStopped() {
         audioTestMenuItem.title = "Start Audio Test"
+    }
+
+    @IBAction func printLabel(_ sender: NSMenuItem) {
+        NotificationCenter.default.post(name: Notification.Name("PrintLabelFromMenu"), object: nil)
     }
 
     @IBAction func playSound(_ sender: NSMenuItem) {

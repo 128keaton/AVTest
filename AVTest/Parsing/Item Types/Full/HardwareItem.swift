@@ -18,6 +18,9 @@ class HardwareItem: ItemType {
     var cpuCores: Int
     var serialNumber: String
     var physicalProcessorCount: Int
+    var configurationCode: String
+    var l2CacheSize: String
+    var l3CacheSize: String
 
     var description: String {
         return "\(machineName): \(machineModel) - \(physicalMemory) - \(physicalProcessorCount)x \(cpuType) - \(cpuCores) Cores - \(serialNumber)"
@@ -33,9 +36,12 @@ class HardwareItem: ItemType {
         self.cpuCores = try container.decode(Int.self, forKey: .cpuCores)
         self.serialNumber = try container.decode(String.self, forKey: .serialNumber)
         self.physicalProcessorCount = try container.decode(Int.self, forKey: .physicalProcessorCount)
-        
-        SerialNumberMatcher.matchToProductName(self.serialNumber) { (newModel) in
-            self.machineModel = newModel
+        self.configurationCode = try container.decode(String.self, forKey: .machineModel)
+        self.l2CacheSize = try container.decode(String.self, forKey: .l2CacheSize)
+        self.l3CacheSize = try container.decode(String.self, forKey: .l3CacheSize)
+
+        SerialNumberMatcher.matchToProductName(self.serialNumber) { (configurationCode) in
+            self.configurationCode = configurationCode
         }
     }
 
@@ -77,5 +83,7 @@ class HardwareItem: ItemType {
         case cpuCores = "number_processors"
         case serialNumber = "serial_number"
         case physicalProcessorCount = "packages"
+        case l2CacheSize = "l2_cache_core"
+        case l3CacheSize = "l3_cache"
     }
 }

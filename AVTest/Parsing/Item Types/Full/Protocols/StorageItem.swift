@@ -12,5 +12,7 @@ protocol StorageItem: ItemType {
     var deviceSerialNumber: String { get }
     var storageItemType: String { get }
     var _size: String? { get }
-
+    var manufacturer: String { get }
+    var isSSD: Bool { get }
+    var name: String { get }
 }

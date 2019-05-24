@@ -68,7 +68,7 @@ class MachineInformationView: NSView {
         if let hardwareDataItem = systemProfilerData.first(where: { $0.dataType == "SPHardwareDataType" }),
             let hardwareItem = hardwareDataItem.items?.first(where: { type(of: $0) == HardwareItem.self }) as? HardwareItem {
 
-            machineModelField.stringValue = hardwareItem.machineModel
+            machineModelField.stringValue = hardwareItem.configurationCode
             machineMemoryField.stringValue = hardwareItem.physicalMemory
             machineProcessorField.stringValue = hardwareItem.cpuType
 

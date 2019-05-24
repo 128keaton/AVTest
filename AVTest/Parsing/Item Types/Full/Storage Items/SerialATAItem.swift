@@ -8,13 +8,19 @@
 
 import Foundation
 
-struct SerialATAItem: StorageItem {
+class SerialATAItem: StorageItem {
     var storageItemType: String = "SerialATA"
     var dataType: String = "SPSerialATADataType"
 
     var deviceSerialNumber: String
+    var isSSD: Bool = false
+    var manufacturer: String
+    var mediumType: String
+    var name: String
+
     var _size: String?
     var _deviceModel: String?
+
 
     var description: String {
         return "\(storageItemType) Drive: \(size) - \(deviceSerialNumber)"
@@ -26,15 +32,34 @@ struct SerialATAItem: StorageItem {
         }
         return String()
     }
-    
-    var isDiscDrive: Bool{
+
+    var isDiscDrive: Bool {
         return _size == nil
     }
 
     enum CodingKeys: String, CodingKey {
         case deviceSerialNumber = "device_serial"
         case _size = "size"
+        case name = "_name"
         case _deviceModel = "device_model"
+        case mediumType = "spsata_medium_type"
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.deviceSerialNumber = try container.decode(String.self, forKey: .deviceSerialNumber).trimmingCharacters(in: .whitespacesAndNewlines)
+        self.mediumType = try container.decode(String.self, forKey: .mediumType).trimmingCharacters(in: .whitespacesAndNewlines)
+        self._size = try container.decodeIfPresent(String.self, forKey: ._size)
+        self._deviceModel = try container.decodeIfPresent(String.self, forKey: ._deviceModel)
+        self.name = try container.decode(String.self, forKey: .name).trimmingCharacters(in: .whitespacesAndNewlines)
+
+        self.isSSD = (mediumType == "Solid State")
+
+        if let manufacturer = self.name.split(separator: " ").first {
+            self.manufacturer = String(manufacturer).lowercased().capitalized
+        } else {
+            self.manufacturer = "Apple"
+        }
     }
 }
 
