@@ -25,6 +25,23 @@
 		8A07290D228F3A0100A3AEBF /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07290C228F3A0100A3AEBF /* ItemType.swift */; };
 		8A072914228F3C1900A3AEBF /* SystemProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A072913228F3C1900A3AEBF /* SystemProfiler.swift */; };
 		8A07291D228F598000A3AEBF /* PowerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07291C228F598000A3AEBF /* PowerItem.swift */; };
+		8A74C97C229837F7009410E9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C97B229837F7009410E9 /* LoadingView.swift */; };
+		8A74C97E22983ADE009410E9 /* NSView+Replacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C97D22983ADE009410E9 /* NSView+Replacement.swift */; };
+		8A74C98022983EF6009410E9 /* MachineInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C97F22983EF6009410E9 /* MachineInformationView.swift */; };
+		8A74C98222983F5D009410E9 /* MachineInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A74C98122983F5D009410E9 /* MachineInformationView.xib */; };
+		8A74C98422984132009410E9 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A74C98322984132009410E9 /* LoadingView.xib */; };
+		8A74C986229842DD009410E9 /* NSView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C985229842DD009410E9 /* NSView+Animations.swift */; };
+		8A74C98B22984C4C009410E9 /* NSTextField+Autosizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C98A22984C4C009410E9 /* NSTextField+Autosizing.swift */; };
+		8A74C98F22985481009410E9 /* CondensedSystemProfilerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C98E22985481009410E9 /* CondensedSystemProfilerData.swift */; };
+		8A74C991229854EA009410E9 /* CondensedStorageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C990229854EA009410E9 /* CondensedStorageItem.swift */; };
+		8A74C99522985A51009410E9 /* CondensedDisplayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C99422985A51009410E9 /* CondensedDisplayInfo.swift */; };
+		8A74C99922985AE1009410E9 /* CondensedBatteryHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C99822985AE1009410E9 /* CondensedBatteryHealth.swift */; };
+		8A74C99B229860DB009410E9 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C99A229860DB009410E9 /* Evaluation.swift */; };
+		8A74C99D22986257009410E9 /* SerialNumberMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C99C22986257009410E9 /* SerialNumberMatcher.swift */; };
+		8A74C99F22986368009410E9 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C99E22986368009410E9 /* Root.swift */; };
+		8A74C9A122986503009410E9 /* XMLParsing+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A022986503009410E9 /* XMLParsing+Alamofire.swift */; };
+		8A74C9A3229869B0009410E9 /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A2229869B0009410E9 /* PrintManager.swift */; };
+		8A74C9A5229869EA009410E9 /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A4229869EA009410E9 /* EnvironmentVariables.swift */; };
 		8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */; };
 		8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */; };
 		8AF21CE02285E21C00D1A0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDE2285E21C00D1A0A5 /* Main.storyboard */; };
@@ -51,6 +68,23 @@
 		8A072913228F3C1900A3AEBF /* SystemProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProfiler.swift; sourceTree = "<group>"; };
 		8A072915228F410F00A3AEBF /* AVTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AVTest.entitlements; sourceTree = "<group>"; };
 		8A07291C228F598000A3AEBF /* PowerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerItem.swift; sourceTree = "<group>"; };
+		8A74C97B229837F7009410E9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8A74C97D22983ADE009410E9 /* NSView+Replacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Replacement.swift"; sourceTree = "<group>"; };
+		8A74C97F22983EF6009410E9 /* MachineInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineInformationView.swift; sourceTree = "<group>"; };
+		8A74C98122983F5D009410E9 /* MachineInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MachineInformationView.xib; sourceTree = "<group>"; };
+		8A74C98322984132009410E9 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		8A74C985229842DD009410E9 /* NSView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Animations.swift"; sourceTree = "<group>"; };
+		8A74C98A22984C4C009410E9 /* NSTextField+Autosizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Autosizing.swift"; sourceTree = "<group>"; };
+		8A74C98E22985481009410E9 /* CondensedSystemProfilerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondensedSystemProfilerData.swift; sourceTree = "<group>"; };
+		8A74C990229854EA009410E9 /* CondensedStorageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondensedStorageItem.swift; sourceTree = "<group>"; };
+		8A74C99422985A51009410E9 /* CondensedDisplayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondensedDisplayInfo.swift; sourceTree = "<group>"; };
+		8A74C99822985AE1009410E9 /* CondensedBatteryHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondensedBatteryHealth.swift; sourceTree = "<group>"; };
+		8A74C99A229860DB009410E9 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
+		8A74C99C22986257009410E9 /* SerialNumberMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialNumberMatcher.swift; sourceTree = "<group>"; };
+		8A74C99E22986368009410E9 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		8A74C9A022986503009410E9 /* XMLParsing+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMLParsing+Alamofire.swift"; sourceTree = "<group>"; };
+		8A74C9A2229869B0009410E9 /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
+		8A74C9A4229869EA009410E9 /* EnvironmentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
 		8AF21CD52285E21A00D1A0A5 /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF21CDA2285E21A00D1A0A5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -86,13 +120,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		8A0728CE228F1D2900A3AEBF /* NSView */ = {
+		8A0728CE228F1D2900A3AEBF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				8A0728CF228F1D3900A3AEBF /* CameraPreview.swift */,
 				8A0728D1228F1D9B00A3AEBF /* AudioPreview.swift */,
+				8A74C97B229837F7009410E9 /* LoadingView.swift */,
+				8A74C97F22983EF6009410E9 /* MachineInformationView.swift */,
 			);
-			path = NSView;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8A0728E7228F2A3600A3AEBF /* Assets */ = {
@@ -107,8 +143,10 @@
 		8A0728EC228F32E400A3AEBF /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
+				8A74C99A229860DB009410E9 /* Evaluation.swift */,
 				8A0728EE228F330A00A3AEBF /* SystemProfilerData.swift */,
 				8A0728F0228F339F00A3AEBF /* Item Types */,
+				8A74C99E22986368009410E9 /* Root.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -116,7 +154,12 @@
 		8A0728ED228F32F400A3AEBF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8A74C9A2229869B0009410E9 /* PrintManager.swift */,
+				8A072913228F3C1900A3AEBF /* SystemProfiler.swift */,
 				8A0728E4228F268A00A3AEBF /* CoreAudio.swift */,
+				8A74C99C22986257009410E9 /* SerialNumberMatcher.swift */,
+				8A74C9A4229869EA009410E9 /* EnvironmentVariables.swift */,
+				8A74C9892298441F009410E9 /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -124,14 +167,8 @@
 		8A0728F0228F339F00A3AEBF /* Item Types */ = {
 			isa = PBXGroup;
 			children = (
-				8A07290E228F3B1600A3AEBF /* Protocols */,
-				8A072908228F38C400A3AEBF /* Storage Items */,
-				8A0728F1228F33AA00A3AEBF /* AudioItem.swift */,
-				8A072900228F368D00A3AEBF /* BatteryItem.swift */,
-				8A0728F5228F349700A3AEBF /* DisplayItem.swift */,
-				8A0728F7228F352D00A3AEBF /* HardwareItem.swift */,
-				8A0728F9228F35DD00A3AEBF /* MemoryItem.swift */,
-				8A07291C228F598000A3AEBF /* PowerItem.swift */,
+				8A74C98D22985474009410E9 /* Condensed */,
+				8A74C98C22985468009410E9 /* Full */,
 			);
 			path = "Item Types";
 			sourceTree = "<group>";
@@ -153,6 +190,61 @@
 				8A072906228F384200A3AEBF /* StorageItem.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8A74C987229843E0009410E9 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				8AF21CDE2285E21C00D1A0A5 /* Main.storyboard */,
+				8A74C98122983F5D009410E9 /* MachineInformationView.xib */,
+				8A74C98322984132009410E9 /* LoadingView.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		8A74C988229843FC009410E9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8AF21CDA2285E21A00D1A0A5 /* TestViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8A74C9892298441F009410E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A74C985229842DD009410E9 /* NSView+Animations.swift */,
+				8A74C97D22983ADE009410E9 /* NSView+Replacement.swift */,
+				8A74C98A22984C4C009410E9 /* NSTextField+Autosizing.swift */,
+				8A74C9A022986503009410E9 /* XMLParsing+Alamofire.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8A74C98C22985468009410E9 /* Full */ = {
+			isa = PBXGroup;
+			children = (
+				8A07290E228F3B1600A3AEBF /* Protocols */,
+				8A072908228F38C400A3AEBF /* Storage Items */,
+				8A0728F1228F33AA00A3AEBF /* AudioItem.swift */,
+				8A072900228F368D00A3AEBF /* BatteryItem.swift */,
+				8A0728F5228F349700A3AEBF /* DisplayItem.swift */,
+				8A0728F7228F352D00A3AEBF /* HardwareItem.swift */,
+				8A0728F9228F35DD00A3AEBF /* MemoryItem.swift */,
+				8A07291C228F598000A3AEBF /* PowerItem.swift */,
+			);
+			path = Full;
+			sourceTree = "<group>";
+		};
+		8A74C98D22985474009410E9 /* Condensed */ = {
+			isa = PBXGroup;
+			children = (
+				8A74C98E22985481009410E9 /* CondensedSystemProfilerData.swift */,
+				8A74C990229854EA009410E9 /* CondensedStorageItem.swift */,
+				8A74C99422985A51009410E9 /* CondensedDisplayInfo.swift */,
+				8A74C99822985AE1009410E9 /* CondensedBatteryHealth.swift */,
+			);
+			path = Condensed;
 			sourceTree = "<group>";
 		};
 		8AF21CCC2285E21A00D1A0A5 = {
@@ -178,14 +270,13 @@
 			children = (
 				8A072915228F410F00A3AEBF /* AVTest.entitlements */,
 				8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */,
+				8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */,
 				8A0728ED228F32F400A3AEBF /* Helpers */,
 				8A0728EC228F32E400A3AEBF /* Parsing */,
 				8A0728E7228F2A3600A3AEBF /* Assets */,
-				8A0728CE228F1D2900A3AEBF /* NSView */,
-				8AF21CDA2285E21A00D1A0A5 /* TestViewController.swift */,
-				8A072913228F3C1900A3AEBF /* SystemProfiler.swift */,
-				8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */,
-				8AF21CDE2285E21C00D1A0A5 /* Main.storyboard */,
+				8A74C988229843FC009410E9 /* View Controllers */,
+				8A0728CE228F1D2900A3AEBF /* Views */,
+				8A74C987229843E0009410E9 /* Nibs */,
 			);
 			path = AVTest;
 			sourceTree = "<group>";
@@ -266,6 +357,8 @@
 				8A0728E9228F2A3D00A3AEBF /* nt4.mp3 in Resources */,
 				8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */,
 				8AF21CE02285E21C00D1A0A5 /* Main.storyboard in Resources */,
+				8A74C98222983F5D009410E9 /* MachineInformationView.xib in Resources */,
+				8A74C98422984132009410E9 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,21 +413,36 @@
 			files = (
 				8A0728EF228F330A00A3AEBF /* SystemProfilerData.swift in Sources */,
 				8A072905228F382500A3AEBF /* SerialATAItem.swift in Sources */,
+				8A74C97E22983ADE009410E9 /* NSView+Replacement.swift in Sources */,
 				8A0728FA228F35DD00A3AEBF /* MemoryItem.swift in Sources */,
+				8A74C98B22984C4C009410E9 /* NSTextField+Autosizing.swift in Sources */,
+				8A74C9A5229869EA009410E9 /* EnvironmentVariables.swift in Sources */,
 				8A07291D228F598000A3AEBF /* PowerItem.swift in Sources */,
 				8A0728F6228F349700A3AEBF /* DisplayItem.swift in Sources */,
+				8A74C99F22986368009410E9 /* Root.swift in Sources */,
 				8A0728F8228F352D00A3AEBF /* HardwareItem.swift in Sources */,
 				8A0728EA228F2ADD00A3AEBF /* TestViewController.swift in Sources */,
 				8A0728D2228F1D9B00A3AEBF /* AudioPreview.swift in Sources */,
+				8A74C99D22986257009410E9 /* SerialNumberMatcher.swift in Sources */,
 				8A0728E5228F268A00A3AEBF /* CoreAudio.swift in Sources */,
+				8A74C98022983EF6009410E9 /* MachineInformationView.swift in Sources */,
 				8A0728F2228F33AA00A3AEBF /* AudioItem.swift in Sources */,
+				8A74C991229854EA009410E9 /* CondensedStorageItem.swift in Sources */,
 				8A0728D0228F1D3900A3AEBF /* CameraPreview.swift in Sources */,
+				8A74C99922985AE1009410E9 /* CondensedBatteryHealth.swift in Sources */,
 				8A07290D228F3A0100A3AEBF /* ItemType.swift in Sources */,
 				8A07290A228F38D900A3AEBF /* DiscBurningItem.swift in Sources */,
 				8A072907228F384200A3AEBF /* StorageItem.swift in Sources */,
+				8A74C9A3229869B0009410E9 /* PrintManager.swift in Sources */,
+				8A74C99522985A51009410E9 /* CondensedDisplayInfo.swift in Sources */,
 				8A072901228F368D00A3AEBF /* BatteryItem.swift in Sources */,
 				8A072914228F3C1900A3AEBF /* SystemProfiler.swift in Sources */,
+				8A74C98F22985481009410E9 /* CondensedSystemProfilerData.swift in Sources */,
+				8A74C99B229860DB009410E9 /* Evaluation.swift in Sources */,
+				8A74C9A122986503009410E9 /* XMLParsing+Alamofire.swift in Sources */,
+				8A74C986229842DD009410E9 /* NSView+Animations.swift in Sources */,
 				8A072903228F37CF00A3AEBF /* NVMeItem.swift in Sources */,
+				8A74C97C229837F7009410E9 /* LoadingView.swift in Sources */,
 				8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

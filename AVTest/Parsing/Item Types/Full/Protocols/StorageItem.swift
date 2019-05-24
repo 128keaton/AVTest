@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol StorageItem: ItemType{
+protocol StorageItem: ItemType {
     var deviceSerialNumber: String { get }
     var storageItemType: String { get }
     var _size: String? { get }
-    
+
 }

@@ -12,6 +12,43 @@ struct SystemProfilerData: Codable, CustomStringConvertible {
     var dataType: String
     var items: [Any]?
 
+    var hardwareInformation: HardwareItem? {
+        return self.items?.first { type(of: $0) == HardwareItem.self } as? HardwareItem
+    }
+
+    var displayInformation: [DisplayItem]? {
+        return self.items as? [DisplayItem]
+    }
+
+    var batteryHealth: BatteryHealthInfo? {
+        if let powerItem = self.items?.first(where: { type(of: $0) == PowerItem.self }) as? PowerItem,
+            let batteryItem = powerItem.battery,
+            let healthInfo = batteryItem.healthInfo {
+            return healthInfo
+        }
+
+        return nil
+    }
+
+    var NVMeStorageDevices: [NVMeItem]? {
+        return self.items as? [NVMeItem]
+    }
+
+    var serialATAStorageDevices: [SerialATAItem]? {
+        if let storageItems = self.items as? [SerialATAControllerItem],
+            (storageItems.filter { $0.hasDrives }).count > 0 {
+            return storageItems.flatMap { $0.items }.filter { !$0.isDiscDrive }
+        }
+        return nil
+    }
+
+    var discDrives: [SerialATAItem]? {
+        if let storageItems = self.items as? [SerialATAControllerItem] {
+            return storageItems.flatMap { $0.items }.filter { $0.isDiscDrive }
+        }
+        return nil
+    }
+
     var description: String {
         var descriptionString = dataType
 
@@ -26,7 +63,7 @@ struct SystemProfilerData: Codable, CustomStringConvertible {
         if let items = items as? [NestedMemoryItem] {
             descriptionString = "Memory Items: \(items)"
         }
-        
+
         if let items = items as? [NestedAudioItem] {
             descriptionString = "Audio Items: \(items)"
         }
@@ -34,13 +71,13 @@ struct SystemProfilerData: Codable, CustomStringConvertible {
         if let items = items as? [PowerItem] {
             descriptionString = "Power Items: \(items)"
         }
-        
+
         if let items = items as? [SerialATAControllerItem] {
-            if items.filter({ $0.hasDrives }).count > 0{
+            if items.filter({ $0.hasDrives }).count > 0 {
                 descriptionString = "SATA Drives: \(items.filter({ $0.hasDrives }))"
             }
-            
-            if items.filter({ $0.hasDiscDrive }).count > 0{
+
+            if items.filter({ $0.hasDiscDrive }).count > 0 {
                 descriptionString += "SATA Disc Drives: \(items.filter({ $0.hasDiscDrive }))"
             }
         }

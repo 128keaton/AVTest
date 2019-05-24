@@ -14,12 +14,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private (set) public var audioPlayer: AVAudioPlayer?
 
     @IBOutlet var audioTestMenuItem: NSMenuItem!
+    @IBOutlet var printMenuItem: NSMenuItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setupAudioPlayer()
 
+        printMenuItem.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStarted), name: Notification.Name("AudioTestStartedFromView"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStopped), name: Notification.Name("AudioTestStoppedFromView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(canPrintLabel), name: Notification.Name("CanPrintLabel"), object: nil)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -38,6 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    @objc func canPrintLabel(){
+        printMenuItem.isEnabled = true
+    }
+    
     @objc func audioTestStarted() {
         audioTestMenuItem.title = "Stop Audio Test"
     }

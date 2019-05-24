@@ -12,24 +12,27 @@ import AudioKitUI
 
 class TestViewController: NSViewController {
     @IBOutlet var cameraPreview: CameraPreview!
-
-    @IBOutlet private var testAudioItem: NSMenuItem!
-    @IBOutlet private var printLabelsItem: NSMenuItem!
-
     @IBOutlet private var audioPreview: AudioPreview!
 
+    @IBOutlet private var testAudioButton: NSButton!
     @IBOutlet private var noCameraLabel: NSTextField!
     @IBOutlet private var noMicrophoneLabel: NSTextField!
+    @IBOutlet private var testingNotesTextView: NSTextView!
 
-    @IBOutlet private var machineModelLabel: NSTextField!
-    @IBOutlet private var machineMemoryLabel: NSTextField!
-    @IBOutlet private var machineProcessorLabel: NSTextField!
+    @IBOutlet private var loadingView: LoadingView!
 
-    private var selectedAction: () -> () = { }
+    private var systemProfilerData: [SystemProfilerData] = []
     private var mic: AKMicrophone!
     private var tracker: AKFrequencyTracker!
     private var silence: AKBooster!
     private var audioPlayer: AVAudioPlayer?
+    private var machineInformationView: MachineInformationView? {
+        didSet {
+            if self.machineInformationView != nil {
+                self.machineInformationView?.delegate = self
+            }
+        }
+    }
 
     private var hasMicrophone: Bool {
         set {
@@ -53,22 +56,22 @@ class TestViewController: NSViewController {
         super.viewDidLoad()
         self.view.wantsLayer = true
 
-        testAudioItem.isEnabled = false
-        selectedAction = playSound
+        testAudioButton.isEnabled = false
 
         NotificationCenter.default.addObserver(self, selector: #selector(audioPlayerReady(_:)), name: Notification.Name("AudioPlayerReady"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStarted), name: Notification.Name("AudioTestStartedFromMenu"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStopped), name: Notification.Name("AudioTestStoppedFromMenu"), object: nil)
 
-                SystemProfiler.testGetInfo()
-        
+        SystemProfiler.delegate = self
+        SystemProfiler.getInfo()
+
         setupAudioKit()
     }
-    
+
 
     private func getSampleRate() {
-        let inputDevice = Audio.getDefaultInputDevice()
-        AKSettings.sampleRate = Audio.getSampleRate(deviceID: inputDevice)
+        let outputDevice = Audio.getDefaultOutputDevice()
+        AKSettings.sampleRate = Audio.getSampleRate(deviceID: outputDevice)
     }
 
     override func viewDidAppear() {
@@ -86,7 +89,9 @@ class TestViewController: NSViewController {
         } catch {
             self.hasMicrophone = false
             AKLog("AudioKit did not start!")
+            return
         }
+        hasMicrophone = true
     }
 
     private func setupAudioKit() {
@@ -121,6 +126,7 @@ class TestViewController: NSViewController {
             session.addInput(deviceInput)
         }
 
+        hasCamera = true
         session.startRunning()
     }
 
@@ -158,36 +164,19 @@ class TestViewController: NSViewController {
     @objc func audioPlayerReady(_ notification: Notification) {
         if let validAudioPlayer = notification.object as? AVAudioPlayer {
             self.audioPlayer = validAudioPlayer
-            self.testAudioItem.isEnabled = true
+            self.testAudioButton.isEnabled = true
         }
     }
 
     @objc func audioTestStarted() {
-        testAudioItem.title = "Stop Audio Test"
+        testAudioButton.title = "Stop Audio Test"
     }
 
     @objc func audioTestStopped() {
-        testAudioItem.title = "Start Audio Test"
+        testAudioButton.title = "Start Audio Test"
     }
 
-    @IBAction func performAction(_ sender: NSButton) {
-        selectedAction()
-    }
-
-    @IBAction func actionChanged(_ sender: NSPopUpButton) {
-        if sender.selectedItem == testAudioItem {
-            selectedAction = playSound
-        } else if sender.selectedItem == printLabelsItem {
-            selectedAction = printLabels
-        }
-    }
-
-    private func printLabels() {
-        SystemProfiler.testGetInfo()
-        //  SystemProfiler.getInfo()
-    }
-
-    private func playSound() {
+    @IBAction func playSound(_ sender: NSButton) {
         if let currentPlayer = audioPlayer,
             currentPlayer.isPlaying {
             stopAudioTest(withPlayer: currentPlayer)
@@ -195,5 +184,72 @@ class TestViewController: NSViewController {
             startAudioTest(withPlayer: currentPlayer)
         }
     }
+
+    private func displayAlert(title: String, text: String) {
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.informativeText = text
+        alert.runModal()
+    }
+
+    private func displayAlert(error: Error) {
+        NSAlert(error: error).runModal()
+    }
+
+    private func handleJSONData(_ jsonData: Data) {
+        if let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+        }
+    }
 }
 
+extension TestViewController: MachineInformationViewDelegate {
+    func printButtonClicked() {
+        if let hardwareDataItem = systemProfilerData.first(where: { $0.dataType == "SPHardwareDataType" }),
+            let hardwareItem = hardwareDataItem.items?.first(where: { type(of: $0) == HardwareItem.self }) as? HardwareItem,
+            let machineInformationView = self.machineInformationView {
+
+            hardwareItem.cpuType = machineInformationView.machineProcesser
+            hardwareItem.physicalMemory = machineInformationView.machineMemory
+            hardwareItem.machineModel = machineInformationView.machineModel
+
+            let condensedSystemProfilerData = CondensedSystemProfilerData(from: systemProfilerData)
+            let evaluation = Evaluation(testingNotes: self.testingNotesTextView.string, condensedData: condensedSystemProfilerData)
+
+            print(systemProfilerData)
+
+            do {
+                let encodedEvaluationData = try JSONEncoder().encode(evaluation)
+                self.handleJSONData(encodedEvaluationData)
+            } catch {
+                handleError(error)
+            }
+        }
+    }
+}
+
+extension TestViewController: SystemProfilerDelegate {
+    func dataParsedSuccessfully(_ systemProfilerData: [SystemProfilerData]) {
+        self.systemProfilerData = systemProfilerData
+
+        NotificationCenter.default.post(name: Notification.Name("CanPrintLabel"), object: nil)
+
+        loadingView.hide {
+            print("LoadingView hid")
+
+            let newMachineInformationView = MachineInformationView(frame: self.loadingView.bounds, hidden: true, systemProfilerData: systemProfilerData)
+            self.view.replaceSubviewPreservingConstraints(subview: self.loadingView, replacement: newMachineInformationView)
+
+            if newMachineInformationView.fieldsPopulated {
+                newMachineInformationView.show(animated: true, completion: {
+                    print("MachineInformationView shown")
+                    self.machineInformationView = newMachineInformationView
+                })
+            }
+        }
+    }
+
+    func handleError(_ error: Error) {
+        self.displayAlert(error: error)
+    }
+}
