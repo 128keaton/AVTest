@@ -9,8 +9,9 @@
 import Foundation
 
 class SerialATAItem: StorageItem {
+    static var isNested: Bool = true
     var storageItemType: String = "SerialATA"
-    var dataType: String = "SPSerialATADataType"
+    var dataType: SPDataType = .serialATA
 
     var deviceSerialNumber: String
     var isSSD: Bool = false
@@ -63,22 +64,15 @@ class SerialATAItem: StorageItem {
     }
 }
 
-struct SerialATAControllerItem: ItemType {
-    var storageItemType: String = "SerialATA"
-    var dataType: String = "SPSerialATADataType"
-
-    var description: String {
-        return "\(storageItemType): \(allDrives) \(allDiscDrives)"
-    }
-
-    var items: [SerialATAItem]
+class SerialATAControllerItem: NestedItemType {
+    var items: [Decodable] = []
 
     var allDrives: [SerialATAItem] {
-        return items.filter { $0.size != "" && $0.deviceSerialNumber != "" }
+        return (items as! [SerialATAItem]).filter { $0.size != "" && $0.deviceSerialNumber != "" }
     }
 
     var allDiscDrives: [SerialATAItem] {
-        return items.filter { $0.isDiscDrive }
+        return (items as! [SerialATAItem]).filter { $0.isDiscDrive }
     }
 
     var hasDrives: Bool {
@@ -91,5 +85,13 @@ struct SerialATAControllerItem: ItemType {
 
     enum CodingKeys: String, CodingKey {
         case items = "_items"
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        if let serialATAItems = try container.decodeIfPresent([SerialATAItem].self, forKey: .items) {
+            self.items = serialATAItems as [Decodable]
+        }
     }
 }

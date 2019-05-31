@@ -9,10 +9,11 @@
 import Foundation
 
 class DiscBurningItem: StorageItem {
+    static var isNested: Bool = false
     var manufacturer: String
     var name: String
     var storageItemType: String = "DiscBurning"
-    var dataType: String = "DPDiscBurningDataType"
+    var dataType: SPDataType = .discBurning
 
     var deviceSerialNumber: String
     var isSSD: Bool = false

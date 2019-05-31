@@ -8,10 +8,11 @@
 
 import Foundation
 class NVMeItem: StorageItem {
+    static var isNested: Bool = false
     var isSSD: Bool = true
 
     var storageItemType: String = "NVMe"
-    var dataType: String = "SPNVMeDataType"
+    var dataType: SPDataType = .NVMe
 
     var deviceSerialNumber: String
     var manufacturer: String

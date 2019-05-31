@@ -9,7 +9,8 @@
 import Foundation
 
 class HardwareItem: ItemType {
-    var dataType: String = "SPHardwareDataType"
+    static var isNested: Bool = false
+    var dataType: SPDataType = .display
 
     var physicalMemory: String
     var machineName: String

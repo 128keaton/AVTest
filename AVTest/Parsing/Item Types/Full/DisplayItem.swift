@@ -9,13 +9,14 @@
 import Foundation
 
 struct DisplayItem: ItemType {
-    var dataType: String = "SPDisplaysDataType"
-    
+    static var isNested: Bool = false
+    var dataType: SPDataType = .display
+
     var graphicsCardModel: String
     var graphicsCardVRAM: String?
     var graphicsCardVRAMShared: String?
-    
-    
+
+
     var description: String {
         return "\(graphicsCardModel): \(graphicsCardVRAM ?? graphicsCardVRAMShared ?? "No VRAM")"
     }

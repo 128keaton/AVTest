@@ -9,27 +9,28 @@
 import Foundation
 
 class PowerItem: ItemType {
-    var dataType: String = "SPPowerDataType"
+    static var isNested: Bool = false
+    var dataType: SPDataType = .power
 
     var name: String
     var battery: BatteryItem?
-    
-    
+
+
     var description: String {
-        if let validBatteryItem = battery{
+        if let validBatteryItem = battery {
             return "\(name): \(validBatteryItem)"
         }
         return "No battery installed"
     }
-    
-    required init(from decoder: Decoder) throws{
+
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
-        if name == "spbattery_information"{
+        if name == "spbattery_information" {
             battery = try BatteryItem.init(from: decoder)
         }
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case name = "_name"
         case battery

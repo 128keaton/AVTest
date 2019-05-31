@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ItemType: Codable, CustomStringConvertible {
-    var dataType: String { get }
+    var dataType: SPDataType { get }
+    static var isNested: Bool { get }
 }

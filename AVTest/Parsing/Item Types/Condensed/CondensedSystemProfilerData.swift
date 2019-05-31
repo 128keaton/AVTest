@@ -33,45 +33,46 @@ struct CondensedSystemProfilerData: Encodable {
         case totalMemory = "totalMemory"
     }
 
-    init(from systemProfilerData: [SystemProfilerData]) {
-        if let hardwareDataItem = systemProfilerData.first(where: { $0.hardwareInformation != nil }) {
-            let hardwareInformation = hardwareDataItem.hardwareInformation!
-
-            processorInfo = hardwareInformation.cpuType
-            totalMemory = hardwareInformation.physicalMemory
-            serialNumber = hardwareInformation.serialNumber
-            numberOfProcessors = hardwareInformation.physicalProcessorCount
-            numberOfCores = hardwareInformation.cpuCores
-            model = hardwareInformation.machineModel
-            l3CacheSize = hardwareInformation.l3CacheSize
-            l2CacheSize = hardwareInformation.l2CacheSize
-        }
-
-        if let batteryHealthDataItem = systemProfilerData.first(where: { $0.batteryHealth != nil }) {
-            self.batteryHealth = CondensedBatteryHealth(from: batteryHealthDataItem.batteryHealth!)
-        }
-
-        if let displayDataItem = systemProfilerData.first(where: { $0.displayInformation != nil }) {
-            self.graphicsCards = displayDataItem.displayInformation!.map { CondensedDisplayItem(from: $0) }
-        }
-
-        if let serialATADataItem = systemProfilerData.first(where: { $0.serialATAStorageDevices != nil }) {
-            let condensedItems = serialATADataItem.serialATAStorageDevices!.map { CondensedStorageItem(from: $0) }
-            self.storageDevices?.append(contentsOf: condensedItems)
-        }
-
-        if let discDriveDataItem = systemProfilerData.first(where: { $0.discDrives != nil }) {
-            let condensedItems = discDriveDataItem.discDrives!.map { CondensedStorageItem(from: $0) }
-            self.discDrives?.append(contentsOf: condensedItems)
-        }
-
-        if let NVMeDataItem = systemProfilerData.first(where: { $0.NVMeStorageDevices != nil }) {
-            let condensedItems = NVMeDataItem.NVMeStorageDevices!.map { CondensedStorageItem(from: $0) }
-            self.storageDevices?.append(contentsOf: condensedItems)
-        }
+    init(from allData: [[ItemType]]) {
+        print(allData)
         
-        if let memoryDataItem = systemProfilerData.first(where: { $0.memoryItems != nil }) {
-            self.memory = memoryDataItem.memoryItems!
+        if let hardwareItems = allData.first(where: { $0.first != nil && $0.first!.dataType == .hardware }) as? [HardwareItem],
+            let hardwareItem = hardwareItems.first {
+
+            processorInfo = hardwareItem.cpuType
+            totalMemory = hardwareItem.physicalMemory
+            serialNumber = hardwareItem.serialNumber
+            numberOfProcessors = hardwareItem.physicalProcessorCount
+            numberOfCores = hardwareItem.cpuCores
+            model = hardwareItem.machineModel
+            l3CacheSize = hardwareItem.l3CacheSize
+            l2CacheSize = hardwareItem.l2CacheSize
+        }
+
+        if let powerItems = allData.first(where: { $0.first != nil && $0.first!.dataType == .power }),
+            let batteryItem = powerItems.first(where: { type(of: $0) == BatteryItem.self }) as? BatteryItem,
+            let healthInfo = batteryItem.healthInfo {
+            self.batteryHealth = CondensedBatteryHealth(from: healthInfo)
+        }
+
+        if let displayItems = allData.first(where: { $0.first != nil && $0.first!.dataType == .display }) as? [DisplayItem] {
+            self.graphicsCards = displayItems.map { CondensedDisplayItem(from: $0) }
+        }
+
+        if let serialATAItems = allData.first(where: { $0.first != nil && $0.first!.dataType == .serialATA }) as? [SerialATAItem] {
+            let storageItems = serialATAItems.filter { !$0.isDiscDrive }
+            let discBurningItems = serialATAItems.filter { $0.isDiscDrive }
+
+            self.storageDevices?.append(contentsOf: storageItems.map { CondensedStorageItem(from: $0) })
+            self.discDrives?.append(contentsOf: discBurningItems.map { CondensedStorageItem(from: $0) })
+        }
+
+        if let NVMeItems = allData.first(where: { $0.first != nil && $0.first!.dataType == .NVMe }) as? [NVMeItem] {
+            self.storageDevices?.append(contentsOf: NVMeItems.map { CondensedStorageItem(from: $0) })
+        }
+
+        if let memoryItems = allData.first(where: { $0.first != nil && $0.first!.dataType == .memory }) as? [MemoryItem] {
+            self.memory = memoryItems
         }
     }
 }

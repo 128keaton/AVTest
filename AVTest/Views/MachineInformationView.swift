@@ -31,7 +31,7 @@ class MachineInformationView: NSView {
         }
     }
 
-    init(frame frameRect: NSRect, hidden: Bool, systemProfilerData passedData: [SystemProfilerData]) {
+    init(frame frameRect: NSRect, hidden: Bool, hardwareItem: HardwareItem) {
         super.init(frame: frameRect)
 
         if hidden {
@@ -39,7 +39,7 @@ class MachineInformationView: NSView {
         }
 
         loadInterface()
-        populateFields(withData: passedData)
+        populateFields(withHardwareItem: hardwareItem)
     }
 
     init(frame frameRect: NSRect, hidden: Bool) {
@@ -64,19 +64,12 @@ class MachineInformationView: NSView {
         loadInterface()
     }
 
-    private func populateFields(withData systemProfilerData: [SystemProfilerData]) {
-        if let hardwareDataItem = systemProfilerData.first(where: { $0.dataType == "SPHardwareDataType" }),
-            let hardwareItem = hardwareDataItem.items?.first(where: { type(of: $0) == HardwareItem.self }) as? HardwareItem {
-
-            machineModelField.stringValue = hardwareItem.configurationCode
-            machineMemoryField.stringValue = hardwareItem.physicalMemory
-            machineProcessorField.stringValue = hardwareItem.cpuType
-
-            fieldsPopulated = true
-            return
-        }
-
-        fieldsPopulated = false
+    private func populateFields(withHardwareItem hardwareItem: HardwareItem) {
+        machineModelField.stringValue = hardwareItem.configurationCode
+        machineMemoryField.stringValue = hardwareItem.physicalMemory
+        machineProcessorField.stringValue = hardwareItem.cpuType
+        
+        fieldsPopulated = true
     }
 
     private func layoutFields() {

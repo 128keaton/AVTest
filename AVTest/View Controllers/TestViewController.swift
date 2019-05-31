@@ -21,7 +21,6 @@ class TestViewController: NSViewController {
 
     @IBOutlet private var loadingView: LoadingView!
 
-    private var systemProfilerData: [SystemProfilerData] = []
     private var mic: AKMicrophone!
     private var tracker: AKFrequencyTracker!
     private var silence: AKBooster!
@@ -199,8 +198,7 @@ class TestViewController: NSViewController {
     }
 
     @objc private func handlePrint() {
-        if let hardwareDataItem = systemProfilerData.first(where: { $0.dataType == "SPHardwareDataType" }),
-            let hardwareItem = hardwareDataItem.items?.first(where: { type(of: $0) == HardwareItem.self }) as? HardwareItem,
+         if let hardwareItem = SystemProfiler.hardwareItem,
             let machineInformationView = self.machineInformationView {
 
             hardwareItem.cpuType = machineInformationView.machineProcesser
@@ -208,7 +206,7 @@ class TestViewController: NSViewController {
             hardwareItem.configurationCode = machineInformationView.machineModel
 
             let testingNotes = self.testingNotesTextView.string.appending("\n\n\(hardwareItem.configurationCode)")
-            let condensedSystemProfilerData = CondensedSystemProfilerData(from: systemProfilerData)
+            let condensedSystemProfilerData = SystemProfiler.condense()
             let evaluation = Evaluation(testingNotes: testingNotes, condensedData: condensedSystemProfilerData)
 
             do {
@@ -234,22 +232,22 @@ extension TestViewController: MachineInformationViewDelegate {
 }
 
 extension TestViewController: SystemProfilerDelegate {
-    func dataParsedSuccessfully(_ systemProfilerData: [SystemProfilerData]) {
-        self.systemProfilerData = systemProfilerData
-
+    func dataParsedSuccessfully() {
         NotificationCenter.default.post(name: Notification.Name("CanPrintLabel"), object: nil)
 
         loadingView.hide {
             print("LoadingView hid")
 
-            let newMachineInformationView = MachineInformationView(frame: self.loadingView.bounds, hidden: true, systemProfilerData: systemProfilerData)
-            self.view.replaceSubviewPreservingConstraints(subview: self.loadingView, replacement: newMachineInformationView)
+            if let hardwareItem = SystemProfiler.hardwareItem {
+                let newMachineInformationView = MachineInformationView(frame: self.loadingView.bounds, hidden: true, hardwareItem: hardwareItem)
+                self.view.replaceSubviewPreservingConstraints(subview: self.loadingView, replacement: newMachineInformationView)
 
-            if newMachineInformationView.fieldsPopulated {
-                newMachineInformationView.show(animated: true, completion: {
-                    print("MachineInformationView shown")
-                    self.machineInformationView = newMachineInformationView
-                })
+                if newMachineInformationView.fieldsPopulated {
+                    newMachineInformationView.show(animated: true, completion: {
+                        print("MachineInformationView shown")
+                        self.machineInformationView = newMachineInformationView
+                    })
+                }
             }
         }
     }

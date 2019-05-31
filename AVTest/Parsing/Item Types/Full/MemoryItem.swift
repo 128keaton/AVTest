@@ -9,7 +9,8 @@
 import Foundation
 
 struct MemoryItem: ItemType {
-    var dataType: String = "SPMemoryDataType"
+    static var isNested: Bool = true
+    var dataType: SPDataType = .memory
     var description: String {
         return "\(size) - \(speed) - \(type) - \(status == "ok" ? "Good" : "Bad")"
     }
@@ -27,14 +28,12 @@ struct MemoryItem: ItemType {
     }
 }
 
-struct NestedMemoryItem: ItemType {
-    var dataType: String = "SPMemoryDataType"
-
+class NestedMemoryItem: NestedItemType {
     var description: String {
         return "\(items)"
     }
 
-    var items: [MemoryItem]
+    var items: [Decodable] = []
 
     private var _isECC: String
     private var _isUpgradable: String
@@ -56,7 +55,19 @@ struct NestedMemoryItem: ItemType {
             _isUpgradable = newValue ? "Yes" : "No"
         }
     }
-
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let memoryItems = try container.decodeIfPresent([MemoryItem].self, forKey: .items)
+        
+        self._isECC = try container.decode(String.self, forKey: ._isECC)
+        self._isUpgradable = try container.decode(String.self, forKey: ._isUpgradable)
+        
+        if memoryItems != nil {
+            self.items = memoryItems! as [Decodable]
+        }
+    }
+    
     enum CodingKeys: String, CodingKey {
         case items = "_items"
         case _isECC = "global_ecc_state"

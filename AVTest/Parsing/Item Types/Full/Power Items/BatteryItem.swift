@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct BatteryItem: ItemType {
-    var dataType: String = "SPPowerDataType"
-    
+struct BatteryItem: Codable {
     private var _installed: String
     
     var installed: Bool {

@@ -12,7 +12,7 @@
 		8A0728E5228F268A00A3AEBF /* CoreAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0728E4228F268A00A3AEBF /* CoreAudio.swift */; };
 		8A0728E9228F2A3D00A3AEBF /* nt4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A0728E8228F2A3D00A3AEBF /* nt4.mp3 */; };
 		8A0728EA228F2ADD00A3AEBF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CDA2285E21A00D1A0A5 /* TestViewController.swift */; };
-		8A0728EF228F330A00A3AEBF /* SystemProfilerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0728EE228F330A00A3AEBF /* SystemProfilerData.swift */; };
+		8A0728EF228F330A00A3AEBF /* SystemProfilerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0728EE228F330A00A3AEBF /* SystemProfilerItem.swift */; };
 		8A0728F2228F33AA00A3AEBF /* AudioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0728F1228F33AA00A3AEBF /* AudioItem.swift */; };
 		8A0728F6228F349700A3AEBF /* DisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0728F5228F349700A3AEBF /* DisplayItem.swift */; };
 		8A0728F8228F352D00A3AEBF /* HardwareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0728F7228F352D00A3AEBF /* HardwareItem.swift */; };
@@ -41,8 +41,8 @@
 		8A74C99F22986368009410E9 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C99E22986368009410E9 /* Root.swift */; };
 		8A74C9A122986503009410E9 /* XMLParsing+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A022986503009410E9 /* XMLParsing+Alamofire.swift */; };
 		8A74C9A3229869B0009410E9 /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A2229869B0009410E9 /* PrintManager.swift */; };
-		8A74C9A922989659009410E9 /* Configuration.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A822989659009410E9 /* Configuration.stencil */; };
 		8A74C9AD2298977F009410E9 /* Configuration.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9AC2298977F009410E9 /* Configuration.generated.swift */; };
+		8A92B767229A3DF0008F736C /* NestedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92B766229A3DF0008F736C /* NestedItemType.swift */; };
 		8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */; };
 		8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */; };
 		8AF21CE02285E21C00D1A0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDE2285E21C00D1A0A5 /* Main.storyboard */; };
@@ -55,7 +55,7 @@
 		8A0728D1228F1D9B00A3AEBF /* AudioPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPreview.swift; sourceTree = "<group>"; };
 		8A0728E4228F268A00A3AEBF /* CoreAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAudio.swift; sourceTree = "<group>"; };
 		8A0728E8228F2A3D00A3AEBF /* nt4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nt4.mp3; sourceTree = "<group>"; };
-		8A0728EE228F330A00A3AEBF /* SystemProfilerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProfilerData.swift; sourceTree = "<group>"; };
+		8A0728EE228F330A00A3AEBF /* SystemProfilerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProfilerItem.swift; sourceTree = "<group>"; };
 		8A0728F1228F33AA00A3AEBF /* AudioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioItem.swift; sourceTree = "<group>"; };
 		8A0728F5228F349700A3AEBF /* DisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayItem.swift; sourceTree = "<group>"; };
 		8A0728F7228F352D00A3AEBF /* HardwareItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareItem.swift; sourceTree = "<group>"; };
@@ -87,6 +87,7 @@
 		8A74C9A2229869B0009410E9 /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
 		8A74C9A822989659009410E9 /* Configuration.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.stencil; sourceTree = "<group>"; };
 		8A74C9AC2298977F009410E9 /* Configuration.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.generated.swift; sourceTree = "<group>"; };
+		8A92B766229A3DF0008F736C /* NestedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedItemType.swift; sourceTree = "<group>"; };
 		8AF21CD52285E21A00D1A0A5 /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF21CDA2285E21A00D1A0A5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -145,10 +146,10 @@
 		8A0728EC228F32E400A3AEBF /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
+				8A5FCE7D2299BC1600997BAD /* Apple API */,
 				8A74C99A229860DB009410E9 /* Evaluation.swift */,
-				8A0728EE228F330A00A3AEBF /* SystemProfilerData.swift */,
+				8A0728EE228F330A00A3AEBF /* SystemProfilerItem.swift */,
 				8A0728F0228F339F00A3AEBF /* Item Types */,
-				8A74C99E22986368009410E9 /* Root.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -190,8 +191,17 @@
 			children = (
 				8A07290C228F3A0100A3AEBF /* ItemType.swift */,
 				8A072906228F384200A3AEBF /* StorageItem.swift */,
+				8A92B766229A3DF0008F736C /* NestedItemType.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8A5FCE7D2299BC1600997BAD /* Apple API */ = {
+			isa = PBXGroup;
+			children = (
+				8A74C99E22986368009410E9 /* Root.swift */,
+			);
+			path = "Apple API";
 			sourceTree = "<group>";
 		};
 		8A74C987229843E0009410E9 /* Nibs */ = {
@@ -228,12 +238,11 @@
 			children = (
 				8A07290E228F3B1600A3AEBF /* Protocols */,
 				8A072908228F38C400A3AEBF /* Storage Items */,
+				8A92B765229A39E9008F736C /* Power Items */,
 				8A0728F1228F33AA00A3AEBF /* AudioItem.swift */,
-				8A072900228F368D00A3AEBF /* BatteryItem.swift */,
 				8A0728F5228F349700A3AEBF /* DisplayItem.swift */,
 				8A0728F7228F352D00A3AEBF /* HardwareItem.swift */,
 				8A0728F9228F35DD00A3AEBF /* MemoryItem.swift */,
-				8A07291C228F598000A3AEBF /* PowerItem.swift */,
 			);
 			path = Full;
 			sourceTree = "<group>";
@@ -255,6 +264,15 @@
 				8A74C9A822989659009410E9 /* Configuration.stencil */,
 			);
 			path = Templates;
+			sourceTree = "<group>";
+		};
+		8A92B765229A39E9008F736C /* Power Items */ = {
+			isa = PBXGroup;
+			children = (
+				8A072900228F368D00A3AEBF /* BatteryItem.swift */,
+				8A07291C228F598000A3AEBF /* PowerItem.swift */,
+			);
+			path = "Power Items";
 			sourceTree = "<group>";
 		};
 		8AF21CCC2285E21A00D1A0A5 = {
@@ -440,7 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A0728EF228F330A00A3AEBF /* SystemProfilerData.swift in Sources */,
+				8A0728EF228F330A00A3AEBF /* SystemProfilerItem.swift in Sources */,
 				8A072905228F382500A3AEBF /* SerialATAItem.swift in Sources */,
 				8A74C97E22983ADE009410E9 /* NSView+Replacement.swift in Sources */,
 				8A0728FA228F35DD00A3AEBF /* MemoryItem.swift in Sources */,
@@ -451,6 +469,7 @@
 				8A74C99F22986368009410E9 /* Root.swift in Sources */,
 				8A0728F8228F352D00A3AEBF /* HardwareItem.swift in Sources */,
 				8A0728EA228F2ADD00A3AEBF /* TestViewController.swift in Sources */,
+				8A92B767229A3DF0008F736C /* NestedItemType.swift in Sources */,
 				8A0728D2228F1D9B00A3AEBF /* AudioPreview.swift in Sources */,
 				8A74C99D22986257009410E9 /* SerialNumberMatcher.swift in Sources */,
 				8A0728E5228F268A00A3AEBF /* CoreAudio.swift in Sources */,
@@ -458,7 +477,6 @@
 				8A0728F2228F33AA00A3AEBF /* AudioItem.swift in Sources */,
 				8A74C991229854EA009410E9 /* CondensedStorageItem.swift in Sources */,
 				8A0728D0228F1D3900A3AEBF /* CameraPreview.swift in Sources */,
-				8A74C9A922989659009410E9 /* Configuration.stencil in Sources */,
 				8A74C99922985AE1009410E9 /* CondensedBatteryHealth.swift in Sources */,
 				8A07290D228F3A0100A3AEBF /* ItemType.swift in Sources */,
 				8A07290A228F38D900A3AEBF /* DiscBurningItem.swift in Sources */,
