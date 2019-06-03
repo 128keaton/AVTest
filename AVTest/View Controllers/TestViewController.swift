@@ -198,7 +198,7 @@ class TestViewController: NSViewController {
     }
 
     @objc private func handlePrint() {
-         if let hardwareItem = SystemProfiler.hardwareItem,
+        if let hardwareItem = SystemProfiler.hardwareItem,
             let machineInformationView = self.machineInformationView {
 
             hardwareItem.cpuType = machineInformationView.machineProcesser
@@ -241,6 +241,14 @@ extension TestViewController: SystemProfilerDelegate {
             if let hardwareItem = SystemProfiler.hardwareItem {
                 let newMachineInformationView = MachineInformationView(frame: self.loadingView.bounds, hidden: true, hardwareItem: hardwareItem)
                 self.view.replaceSubviewPreservingConstraints(subview: self.loadingView, replacement: newMachineInformationView)
+
+                if let powerBatteryItem = SystemProfiler.powerItems.first(where: { $0.battery != nil }),
+                    let batteryItem = powerBatteryItem.battery,
+                    let batteryHealth = batteryItem.healthInfo {
+
+                    let batteryStatus = "\(batteryHealth.healthStatus) - (\(batteryHealth.cycleCount) cycles)"
+                    newMachineInformationView.showBatteryHealth(batteryStatus: batteryStatus)
+                }
 
                 if newMachineInformationView.fieldsPopulated {
                     newMachineInformationView.show(animated: true, completion: {

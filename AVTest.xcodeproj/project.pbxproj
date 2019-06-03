@@ -25,6 +25,7 @@
 		8A07290D228F3A0100A3AEBF /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07290C228F3A0100A3AEBF /* ItemType.swift */; };
 		8A072914228F3C1900A3AEBF /* SystemProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A072913228F3C1900A3AEBF /* SystemProfiler.swift */; };
 		8A07291D228F598000A3AEBF /* PowerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07291C228F598000A3AEBF /* PowerItem.swift */; };
+		8A3243D422A4CB850042E6D9 /* AVTest-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3243D322A4CB850042E6D9 /* AVTest-Icon.png */; };
 		8A74C97C229837F7009410E9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C97B229837F7009410E9 /* LoadingView.swift */; };
 		8A74C97E22983ADE009410E9 /* NSView+Replacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C97D22983ADE009410E9 /* NSView+Replacement.swift */; };
 		8A74C98022983EF6009410E9 /* MachineInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C97F22983EF6009410E9 /* MachineInformationView.swift */; };
@@ -69,6 +70,7 @@
 		8A072913228F3C1900A3AEBF /* SystemProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProfiler.swift; sourceTree = "<group>"; };
 		8A072915228F410F00A3AEBF /* AVTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AVTest.entitlements; sourceTree = "<group>"; };
 		8A07291C228F598000A3AEBF /* PowerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerItem.swift; sourceTree = "<group>"; };
+		8A3243D322A4CB850042E6D9 /* AVTest-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AVTest-Icon.png"; sourceTree = "<group>"; };
 		8A74C97B229837F7009410E9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8A74C97D22983ADE009410E9 /* NSView+Replacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Replacement.swift"; sourceTree = "<group>"; };
 		8A74C97F22983EF6009410E9 /* MachineInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineInformationView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		8A0728E7228F2A3600A3AEBF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8A3243D322A4CB850042E6D9 /* AVTest-Icon.png */,
 				8AF21CE12285E21C00D1A0A5 /* Info.plist */,
 				8A0728E8228F2A3D00A3AEBF /* nt4.mp3 */,
 			);
@@ -330,7 +333,6 @@
 				8AF21CD22285E21A00D1A0A5 /* Frameworks */,
 				8AF21CD32285E21A00D1A0A5 /* Resources */,
 				B226530DD36865C210A72418 /* [CP] Embed Pods Frameworks */,
-				8A74C9AA22989696009410E9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -385,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A0728E9228F2A3D00A3AEBF /* nt4.mp3 in Resources */,
+				8A3243D422A4CB850042E6D9 /* AVTest-Icon.png in Resources */,
 				8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */,
 				8AF21CE02285E21C00D1A0A5 /* Main.storyboard in Resources */,
 				8A74C98222983F5D009410E9 /* MachineInformationView.xib in Resources */,
@@ -416,23 +419,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		8A74C9AA22989696009410E9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "    /usr/local/bin/sourcery --sources AVTest --templates Templates/Configuration.stencil --output AVTest/Helpers --args printServerAddress=\\\"$PRINT_SERVER_ADDRESS\\\"\n";
 		};
 		B226530DD36865C210A72418 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

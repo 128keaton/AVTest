@@ -13,6 +13,9 @@ class MachineInformationView: NSView {
     @IBOutlet private var machineModelField: NSTextField!
     @IBOutlet private var machineMemoryField: NSTextField!
     @IBOutlet private var machineProcessorField: NSTextField!
+    
+    @IBOutlet private var machineBatteryHealthLabel: NSTextField!
+    @IBOutlet private var machineBatteryHealthField: NSTextField!
 
     @IBOutlet private var printButton: NSButton!
     @IBOutlet private var contentBox: NSBox!
@@ -31,14 +34,9 @@ class MachineInformationView: NSView {
         }
     }
 
-    init(frame frameRect: NSRect, hidden: Bool, hardwareItem: HardwareItem) {
-        super.init(frame: frameRect)
-
-        if hidden {
-            self.alphaValue = 0.0
-        }
-
-        loadInterface()
+    convenience init(frame frameRect: NSRect, hidden: Bool, hardwareItem: HardwareItem) {
+        self.init(frame: frameRect, hidden: hidden)
+        
         populateFields(withHardwareItem: hardwareItem)
     }
 
@@ -64,6 +62,13 @@ class MachineInformationView: NSView {
         loadInterface()
     }
 
+    public func showBatteryHealth(batteryStatus: String){
+        machineBatteryHealthField.alphaValue = 1.0
+        machineBatteryHealthLabel.alphaValue = 1.0
+        
+        machineBatteryHealthField.stringValue = batteryStatus
+    }
+    
     private func populateFields(withHardwareItem hardwareItem: HardwareItem) {
         machineModelField.stringValue = hardwareItem.configurationCode
         machineMemoryField.stringValue = hardwareItem.physicalMemory

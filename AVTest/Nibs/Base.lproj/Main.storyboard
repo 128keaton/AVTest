@@ -177,7 +177,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="177" id="mpu-Pf-pzC"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="AppIcon" id="pAO-Hg-rcK"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="AVTest-Icon" id="pAO-Hg-rcK"/>
                             </imageView>
                             <box title="Testing Notes" titlePosition="belowTop" translatesAutoresizingMaskIntoConstraints="NO" id="tyf-pk-DJN">
                                 <rect key="frame" x="17" y="16" width="311" height="183"/>
@@ -283,6 +283,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppIcon" width="128" height="128"/>
+        <image name="AVTest-Icon" width="512" height="512"/>
     </resources>
 </document>

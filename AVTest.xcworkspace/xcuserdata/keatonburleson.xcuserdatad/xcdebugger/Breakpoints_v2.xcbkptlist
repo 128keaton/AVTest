@@ -118,7 +118,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVTest/Parsing/Item Types/Condensed/CondensedSystemProfilerData.swift"
@@ -134,7 +134,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVTest/Parsing/Item Types/Condensed/CondensedSystemProfilerData.swift"
@@ -147,14 +147,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "AVTest.CondensedSystemProfilerData.init(from: Swift.Array&lt;Swift.Array&lt;AVTest.ItemType&gt;&gt;) -&gt; AVTest.CondensedSystemProfilerData"
                   moduleName = "AVTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/keatonburleson/Documents/ER2/AVTest/AVTest/Parsing/Item%20Types/Condensed/CondensedSystemProfilerData.swift"
-                  timestampString = "580537083.6277061"
+                  timestampString = "581225168.77632"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
@@ -162,14 +162,14 @@
                   offsetFromSymbolStart = "5856">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #10 (AVTest.SerialATAItem) -&gt; AVTest.CondensedStorageItem in AVTest.CondensedSystemProfilerData.init(from: Swift.Array&lt;Swift.Array&lt;AVTest.ItemType&gt;&gt;) -&gt; AVTest.CondensedSystemProfilerData"
                   moduleName = "AVTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/keatonburleson/Documents/ER2/AVTest/AVTest/Parsing/Item%20Types/Condensed/CondensedSystemProfilerData.swift"
-                  timestampString = "580537083.630056"
+                  timestampString = "581225168.779846"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
@@ -182,7 +182,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVTest/Parsing/Item Types/Condensed/CondensedSystemProfilerData.swift"
@@ -195,14 +195,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "AVTest.CondensedSystemProfilerData.init(from: Swift.Array&lt;Swift.Array&lt;AVTest.ItemType&gt;&gt;) -&gt; AVTest.CondensedSystemProfilerData"
                   moduleName = "AVTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/keatonburleson/Documents/ER2/AVTest/AVTest/Parsing/Item%20Types/Condensed/CondensedSystemProfilerData.swift"
-                  timestampString = "580537083.634671"
+                  timestampString = "581225168.793973"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
@@ -210,14 +210,14 @@
                   offsetFromSymbolStart = "5489">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #9 (AVTest.SerialATAItem) -&gt; AVTest.CondensedStorageItem in AVTest.CondensedSystemProfilerData.init(from: Swift.Array&lt;Swift.Array&lt;AVTest.ItemType&gt;&gt;) -&gt; AVTest.CondensedSystemProfilerData"
                   moduleName = "AVTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/keatonburleson/Documents/ER2/AVTest/AVTest/Parsing/Item%20Types/Condensed/CondensedSystemProfilerData.swift"
-                  timestampString = "580537083.636307"
+                  timestampString = "581225168.798613"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
@@ -230,7 +230,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVTest/Parsing/Item Types/Condensed/CondensedSystemProfilerData.swift"
@@ -246,7 +246,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVTest/Parsing/Item Types/Condensed/CondensedSystemProfilerData.swift"
@@ -259,14 +259,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "AVTest.CondensedSystemProfilerData.init(from: Swift.Array&lt;Swift.Array&lt;AVTest.ItemType&gt;&gt;) -&gt; AVTest.CondensedSystemProfilerData"
                   moduleName = "AVTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/keatonburleson/Documents/ER2/AVTest/AVTest/Parsing/Item%20Types/Condensed/CondensedSystemProfilerData.swift"
-                  timestampString = "580537083.643749"
+                  timestampString = "581225168.833727"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -274,14 +274,14 @@
                   offsetFromSymbolStart = "6745">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #12 (AVTest.NVMeItem) -&gt; AVTest.CondensedStorageItem in AVTest.CondensedSystemProfilerData.init(from: Swift.Array&lt;Swift.Array&lt;AVTest.ItemType&gt;&gt;) -&gt; AVTest.CondensedSystemProfilerData"
                   moduleName = "AVTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/keatonburleson/Documents/ER2/AVTest/AVTest/Parsing/Item%20Types/Condensed/CondensedSystemProfilerData.swift"
-                  timestampString = "580537083.6454279"
+                  timestampString = "581225168.837353"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -342,11 +342,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVTest/View Controllers/TestViewController.swift"
-            timestampString = "580537083.109903"
+            timestampString = "581226250.767496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "210"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVTest/View Controllers/TestViewController.swift"
-            timestampString = "580537083.109949"
+            timestampString = "581226250.7679009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
