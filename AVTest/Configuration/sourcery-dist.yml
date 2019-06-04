@@ -1,5 +1,5 @@
 args:
-  printServerAddress: "Test"
+    printServerAddress: "Test"
 sources:
     - AVTest
 templates:

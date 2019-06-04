@@ -2,4 +2,4 @@
 Pods/
 AVTest/Generated/*.swift
 AVTest.xcworkspace/xcuserdata/*.xcuserdatad
-.sourcery.yml
+AVTest/Configuration/sourcery.yml

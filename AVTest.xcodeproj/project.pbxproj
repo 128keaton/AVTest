@@ -43,6 +43,8 @@
 		8A74C9A122986503009410E9 /* XMLParsing+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A022986503009410E9 /* XMLParsing+Alamofire.swift */; };
 		8A74C9A3229869B0009410E9 /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A2229869B0009410E9 /* PrintManager.swift */; };
 		8A8E406322A5F5CE00CC7B72 /* Generated in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406222A5F5CE00CC7B72 /* Generated */; };
+		8A8E406522A5F81C00CC7B72 /* sourcery.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406422A5F81C00CC7B72 /* sourcery.yml */; };
+		8A8E406C22A5F8DE00CC7B72 /* sourcery-dist.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406B22A5F8DE00CC7B72 /* sourcery-dist.yml */; };
 		8A92B767229A3DF0008F736C /* NestedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92B766229A3DF0008F736C /* NestedItemType.swift */; };
 		8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */; };
 		8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */; };
@@ -89,6 +91,8 @@
 		8A74C9A2229869B0009410E9 /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
 		8A74C9A822989659009410E9 /* Configuration.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.stencil; sourceTree = "<group>"; };
 		8A8E406222A5F5CE00CC7B72 /* Generated */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Generated; path = AVTest/Generated; sourceTree = "<group>"; };
+		8A8E406422A5F81C00CC7B72 /* sourcery.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sourcery.yml; sourceTree = "<group>"; };
+		8A8E406B22A5F8DE00CC7B72 /* sourcery-dist.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sourcery-dist.yml"; sourceTree = "<group>"; };
 		8A92B766229A3DF0008F736C /* NestedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedItemType.swift; sourceTree = "<group>"; };
 		8AF21CD52285E21A00D1A0A5 /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +272,15 @@
 			path = Templates;
 			sourceTree = "<group>";
 		};
+		8A8E406622A5F84200CC7B72 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				8A8E406422A5F81C00CC7B72 /* sourcery.yml */,
+				8A8E406B22A5F8DE00CC7B72 /* sourcery-dist.yml */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		8A92B765229A39E9008F736C /* Power Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +313,7 @@
 		8AF21CD72285E21A00D1A0A5 /* AVTest */ = {
 			isa = PBXGroup;
 			children = (
+				8A8E406622A5F84200CC7B72 /* Configuration */,
 				8A072915228F410F00A3AEBF /* AVTest.entitlements */,
 				8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */,
 				8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */,
@@ -386,7 +400,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8E406522A5F81C00CC7B72 /* sourcery.yml in Resources */,
 				8A0728E9228F2A3D00A3AEBF /* nt4.mp3 in Resources */,
+				8A8E406C22A5F8DE00CC7B72 /* sourcery-dist.yml in Resources */,
 				8A3243D422A4CB850042E6D9 /* AVTest-Icon.png in Resources */,
 				8A8E406322A5F5CE00CC7B72 /* Generated in Resources */,
 				8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */,
