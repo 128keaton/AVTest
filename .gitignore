@@ -1,5 +1,8 @@
 .DS_Store
 Pods/
-AVTest/Generated/*.swift
+
+# Sourcery
+AVTest/Sourcery/Generated/*.generated.swift
 AVTest.xcworkspace/xcuserdata/*.xcuserdatad
-AVTest/Configuration/sourcery.yml
+AVTest/Sourcery/Configuration/sourcery.yml
+AVTest/Sourcery/Configuration/sourcery.yml

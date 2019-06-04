@@ -1,0 +1,7 @@
+args:
+    printServerAddress: "Test"
+sources:
+    - ../../../../AVTest
+templates:
+    - ../Templates
+output: ../Generated
