@@ -269,7 +269,6 @@
 		8A74C9AB229896F6009410E9 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
-				8A8E407422A5FC8700CC7B72 /* Configuration.generated.swift */,
 				8A74C9A822989659009410E9 /* Configuration.stencil */,
 			);
 			path = Templates;
@@ -297,6 +296,7 @@
 		8A8E406E22A5F9FF00CC7B72 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				8A8E407422A5FC8700CC7B72 /* Configuration.generated.swift */,
 				8A8E406F22A5FA0600CC7B72 /* .git-keep */,
 			);
 			path = Generated;
