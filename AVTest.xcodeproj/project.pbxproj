@@ -45,7 +45,7 @@
 		8A8E406522A5F81C00CC7B72 /* sourcery.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406422A5F81C00CC7B72 /* sourcery.yml */; };
 		8A8E406C22A5F8DE00CC7B72 /* sourcery-dist.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406B22A5F8DE00CC7B72 /* sourcery-dist.yml */; };
 		8A8E407022A5FA0600CC7B72 /* .git-keep in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406F22A5FA0600CC7B72 /* .git-keep */; };
-		8A8E407222A5FB8C00CC7B72 /* Configuration.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E407122A5FB8C00CC7B72 /* Configuration.generated.swift */; };
+		8A8E407522A5FC8700CC7B72 /* Configuration.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E407422A5FC8700CC7B72 /* Configuration.generated.swift */; };
 		8A92B767229A3DF0008F736C /* NestedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92B766229A3DF0008F736C /* NestedItemType.swift */; };
 		8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */; };
 		8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */; };
@@ -94,7 +94,7 @@
 		8A8E406422A5F81C00CC7B72 /* sourcery.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sourcery.yml; sourceTree = "<group>"; };
 		8A8E406B22A5F8DE00CC7B72 /* sourcery-dist.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sourcery-dist.yml"; sourceTree = "<group>"; };
 		8A8E406F22A5FA0600CC7B72 /* .git-keep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".git-keep"; sourceTree = "<group>"; };
-		8A8E407122A5FB8C00CC7B72 /* Configuration.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.generated.swift; sourceTree = "<group>"; };
+		8A8E407422A5FC8700CC7B72 /* Configuration.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.generated.swift; path = AVTest/Sourcery/Generated/Configuration.generated.swift; sourceTree = SOURCE_ROOT; };
 		8A92B766229A3DF0008F736C /* NestedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedItemType.swift; sourceTree = "<group>"; };
 		8AF21CD52285E21A00D1A0A5 /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +269,7 @@
 		8A74C9AB229896F6009410E9 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				8A8E407422A5FC8700CC7B72 /* Configuration.generated.swift */,
 				8A74C9A822989659009410E9 /* Configuration.stencil */,
 			);
 			path = Templates;
@@ -296,7 +297,6 @@
 		8A8E406E22A5F9FF00CC7B72 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				8A8E407122A5FB8C00CC7B72 /* Configuration.generated.swift */,
 				8A8E406F22A5FA0600CC7B72 /* .git-keep */,
 			);
 			path = Generated;
@@ -361,6 +361,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AF21CE52285E21C00D1A0A5 /* Build configuration list for PBXNativeTarget "AVTest" */;
 			buildPhases = (
+				8A8E407322A5FC4A00CC7B72 /* ShellScript */,
 				24886D0CCA811882AE2D3969 /* [CP] Check Pods Manifest.lock */,
 				8AF21CD12285E21A00D1A0A5 /* Sources */,
 				8AF21CD22285E21A00D1A0A5 /* Frameworks */,
@@ -456,6 +457,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8A8E407322A5FC4A00CC7B72 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Pods/Sourcery/bin/sourcery --config AVTest/Sourcery/Configuration/sourcery.yml\n";
+		};
 		B226530DD36865C210A72418 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,7 +503,7 @@
 				8A74C97E22983ADE009410E9 /* NSView+Replacement.swift in Sources */,
 				8A0728FA228F35DD00A3AEBF /* MemoryItem.swift in Sources */,
 				8A74C98B22984C4C009410E9 /* NSTextField+Autosizing.swift in Sources */,
-				8A8E407222A5FB8C00CC7B72 /* Configuration.generated.swift in Sources */,
+				8A8E407522A5FC8700CC7B72 /* Configuration.generated.swift in Sources */,
 				8A07291D228F598000A3AEBF /* PowerItem.swift in Sources */,
 				8A0728F6228F349700A3AEBF /* DisplayItem.swift in Sources */,
 				8A74C99F22986368009410E9 /* Root.swift in Sources */,
