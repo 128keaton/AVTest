@@ -46,6 +46,9 @@
 		8A8E406C22A5F8DE00CC7B72 /* sourcery-dist.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406B22A5F8DE00CC7B72 /* sourcery-dist.yml */; };
 		8A8E407022A5FA0600CC7B72 /* .git-keep in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406F22A5FA0600CC7B72 /* .git-keep */; };
 		8A8E407522A5FC8700CC7B72 /* Configuration.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E407422A5FC8700CC7B72 /* Configuration.generated.swift */; };
+		8A8E407722A60E6200CC7B72 /* InternalDrivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E407622A60E6200CC7B72 /* InternalDrivesViewController.swift */; };
+		8A8E407922A61AA900CC7B72 /* String+CondenseWhitespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E407822A61AA900CC7B72 /* String+CondenseWhitespace.swift */; };
+		8A8E407B22A61C4300CC7B72 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E407A22A61C4300CC7B72 /* Size.swift */; };
 		8A92B767229A3DF0008F736C /* NestedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92B766229A3DF0008F736C /* NestedItemType.swift */; };
 		8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */; };
 		8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */; };
@@ -95,6 +98,9 @@
 		8A8E406B22A5F8DE00CC7B72 /* sourcery-dist.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sourcery-dist.yml"; sourceTree = "<group>"; };
 		8A8E406F22A5FA0600CC7B72 /* .git-keep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".git-keep"; sourceTree = "<group>"; };
 		8A8E407422A5FC8700CC7B72 /* Configuration.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.generated.swift; path = AVTest/Sourcery/Generated/Configuration.generated.swift; sourceTree = SOURCE_ROOT; };
+		8A8E407622A60E6200CC7B72 /* InternalDrivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalDrivesViewController.swift; sourceTree = "<group>"; };
+		8A8E407822A61AA900CC7B72 /* String+CondenseWhitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CondenseWhitespace.swift"; sourceTree = "<group>"; };
+		8A8E407A22A61C4300CC7B72 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		8A92B766229A3DF0008F736C /* NestedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedItemType.swift; sourceTree = "<group>"; };
 		8AF21CD52285E21A00D1A0A5 /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 		8A0728ED228F32F400A3AEBF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8A8E407A22A61C4300CC7B72 /* Size.swift */,
 				8A74C9A2229869B0009410E9 /* PrintManager.swift */,
 				8A072913228F3C1900A3AEBF /* SystemProfiler.swift */,
 				8A0728E4228F268A00A3AEBF /* CoreAudio.swift */,
@@ -226,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				8AF21CDA2285E21A00D1A0A5 /* TestViewController.swift */,
+				8A8E407622A60E6200CC7B72 /* InternalDrivesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 				8A74C97D22983ADE009410E9 /* NSView+Replacement.swift */,
 				8A74C98A22984C4C009410E9 /* NSTextField+Autosizing.swift */,
 				8A74C9A022986503009410E9 /* XMLParsing+Alamofire.swift */,
+				8A8E407822A61AA900CC7B72 /* String+CondenseWhitespace.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -514,10 +523,12 @@
 				8A74C99D22986257009410E9 /* SerialNumberMatcher.swift in Sources */,
 				8A0728E5228F268A00A3AEBF /* CoreAudio.swift in Sources */,
 				8A74C98022983EF6009410E9 /* MachineInformationView.swift in Sources */,
+				8A8E407922A61AA900CC7B72 /* String+CondenseWhitespace.swift in Sources */,
 				8A0728F2228F33AA00A3AEBF /* AudioItem.swift in Sources */,
 				8A74C991229854EA009410E9 /* CondensedStorageItem.swift in Sources */,
 				8A0728D0228F1D3900A3AEBF /* CameraPreview.swift in Sources */,
 				8A74C99922985AE1009410E9 /* CondensedBatteryHealth.swift in Sources */,
+				8A8E407B22A61C4300CC7B72 /* Size.swift in Sources */,
 				8A07290D228F3A0100A3AEBF /* ItemType.swift in Sources */,
 				8A07290A228F38D900A3AEBF /* DiscBurningItem.swift in Sources */,
 				8A072907228F384200A3AEBF /* StorageItem.swift in Sources */,
@@ -527,6 +538,7 @@
 				8A072914228F3C1900A3AEBF /* SystemProfiler.swift in Sources */,
 				8A74C98F22985481009410E9 /* CondensedSystemProfilerData.swift in Sources */,
 				8A74C99B229860DB009410E9 /* Evaluation.swift in Sources */,
+				8A8E407722A60E6200CC7B72 /* InternalDrivesViewController.swift in Sources */,
 				8A74C9A122986503009410E9 /* XMLParsing+Alamofire.swift in Sources */,
 				8A74C986229842DD009410E9 /* NSView+Animations.swift in Sources */,
 				8A072903228F37CF00A3AEBF /* NVMeItem.swift in Sources */,

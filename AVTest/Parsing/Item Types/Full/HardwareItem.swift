@@ -39,7 +39,20 @@ class HardwareItem: ItemType {
         self.physicalProcessorCount = try container.decode(Int.self, forKey: .physicalProcessorCount)
         self.configurationCode = try container.decode(String.self, forKey: .machineModel)
         self.l2CacheSize = try container.decode(String.self, forKey: .l2CacheSize)
-        self.l3CacheSize = try container.decode(String.self, forKey: .l3CacheSize)
+
+        if let _l3CacheSize = try container.decodeIfPresent(String.self, forKey: .l3CacheSize) {
+            self.l3CacheSize = _l3CacheSize
+        } else {
+            let alternativeContainer = try decoder.container(keyedBy: AlternativeCodingKeys.self)
+            
+            print("Attempting to use alternative key for l3 cache")
+            if let _alternativeL3CacheSize = try alternativeContainer.decodeIfPresent(String.self, forKey: .l3CacheSize) {
+                self.l3CacheSize = _alternativeL3CacheSize
+            } else {
+                self.l3CacheSize = "0 MB"
+            }
+        }
+
 
         SerialNumberMatcher.matchToProductName(self.serialNumber) { (configurationCode) in
             self.configurationCode = configurationCode
@@ -74,6 +87,10 @@ class HardwareItem: ItemType {
 
     func updateCPUInfo(_ newCPUInfo: String) {
         self.cpuType = newCPUInfo
+    }
+
+    enum AlternativeCodingKeys: String, CodingKey {
+        case l3CacheSize = "l3_cache_processor"
     }
 
     enum CodingKeys: String, CodingKey {

@@ -197,6 +197,11 @@ class TestViewController: NSViewController {
         NSAlert(error: error).runModal()
     }
 
+    private func enableShowInternalDrivesMenuItem() {
+        print("Enabling 'Show Internal Drives' menu item")
+        NotificationCenter.default.post(name: Notification.Name("CanShowInternalDrivesMenuItem"), object: nil)
+    }
+
     @objc private func handlePrint() {
         if let hardwareItem = SystemProfiler.hardwareItem,
             let machineInformationView = self.machineInformationView {
@@ -248,6 +253,10 @@ extension TestViewController: SystemProfilerDelegate {
 
                     let batteryStatus = "\(batteryHealth.healthStatus) - (\(batteryHealth.cycleCount) cycles)"
                     newMachineInformationView.showBatteryHealth(batteryStatus: batteryStatus)
+                }
+
+                if SystemProfiler.NVMeItems.count > 0 || SystemProfiler.serialATAItems.count > 0 {
+                    self.enableShowInternalDrivesMenuItem()
                 }
 
                 if newMachineInformationView.fieldsPopulated {

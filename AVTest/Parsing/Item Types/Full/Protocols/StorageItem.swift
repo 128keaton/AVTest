@@ -9,10 +9,13 @@
 import Foundation
 
 protocol StorageItem: ItemType {
-    var deviceSerialNumber: String { get }
+    var serialNumber: String { get }
     var storageItemType: String { get }
-    var _size: String? { get }
     var manufacturer: String { get }
     var isSSD: Bool { get }
     var name: String { get }
+    var size: String { get }
+    var rawSize: Double { get }
+    var rawSizeUnit: String { get }
+    subscript(key: String) -> String { get }
 }

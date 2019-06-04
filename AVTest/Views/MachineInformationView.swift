@@ -96,6 +96,9 @@ class MachineInformationView: NSView {
         addSubview(contentBox)
         contentBox.frame = self.bounds
         contentBox.autoresizingMask = [.height, .width]
+        
+        machineBatteryHealthField.alphaValue = 0.0
+        machineBatteryHealthLabel.alphaValue = 0.0
     }
 
     @IBAction func printButtonClicked(_ sender: NSButton) {

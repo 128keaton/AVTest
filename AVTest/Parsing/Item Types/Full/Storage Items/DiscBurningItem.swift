@@ -9,38 +9,45 @@
 import Foundation
 
 class DiscBurningItem: StorageItem {
+    // MARK: StorageItem
     static var isNested: Bool = false
-    var manufacturer: String
-    var name: String
     var storageItemType: String = "DiscBurning"
     var dataType: SPDataType = .discBurning
-
-    var deviceSerialNumber: String
+    var serialNumber: String
     var isSSD: Bool = false
-
-    var _size: String? = nil
-    var _deviceModel: String?
+    var name: String = "Indeterminate"
+    var size: String = "Indeterminate"
+    var manufacturer: String = "Apple"
+    var rawSize: Double = 0.0
+    var rawSizeUnit: String = "KB"
 
     var description: String {
-        return "\(storageItemType): \(deviceSerialNumber)"
+        return "\(storageItemType): \(serialNumber)"
     }
 
-    enum CodingKeys: String, CodingKey {
-        case deviceSerialNumber = "device_serial"
-        case _deviceModel = "device_model"
-        case name = "_name"
-    }
-
+    // MARK: Initializer
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.deviceSerialNumber = try container.decode(String.self, forKey: .deviceSerialNumber).trimmingCharacters(in: .whitespacesAndNewlines)
-        self._deviceModel = try container.decodeIfPresent(String.self, forKey: ._deviceModel)
-        self.name = try container.decode(String.self, forKey: .name).trimmingCharacters(in: .whitespacesAndNewlines)
+
+        self.serialNumber = try container.decode(String.self, forKey: .serialNumber).condenseWhitespace()
+        self.name = try container.decode(String.self, forKey: .name).condenseWhitespace()
 
         if let manufacturer = self.name.split(separator: " ").first {
             self.manufacturer = String(manufacturer).lowercased().capitalized
-        } else {
-            self.manufacturer = "Apple"
         }
+    }
+
+    subscript(key: String) -> String {
+        if key == "serialNumber" {
+            return self.serialNumber
+        }
+        return String()
+    }
+
+    // MARK: Coding Keys (Codable)
+    private enum CodingKeys: String, CodingKey {
+        case serialNumber = "device_serial"
+        case size = "size"
+        case name = "_name"
     }
 }

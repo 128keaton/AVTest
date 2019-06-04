@@ -15,13 +15,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet var audioTestMenuItem: NSMenuItem!
     @IBOutlet var printMenuItem: NSMenuItem!
+    @IBOutlet var showInternalDrivesMenuItem: NSMenuItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setupAudioPlayer()
 
         printMenuItem.isEnabled = false
+        showInternalDrivesMenuItem.isEnabled = false
+
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStarted), name: Notification.Name("AudioTestStartedFromView"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(audioTestStopped), name: Notification.Name("AudioTestStoppedFromView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(canShowInternalDrivesMenuItem), name: Notification.Name("CanShowInternalDrivesMenuItem"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(canPrintLabel), name: Notification.Name("CanPrintLabel"), object: nil)
     }
 
@@ -51,6 +55,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func audioTestStopped() {
         audioTestMenuItem.title = "Start Audio Test"
+    }
+
+    @objc func canShowInternalDrivesMenuItem() {
+        showInternalDrivesMenuItem.isEnabled = true
     }
 
     @IBAction func printLabel(_ sender: NSMenuItem) {

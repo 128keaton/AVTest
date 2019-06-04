@@ -9,47 +9,61 @@
 import Foundation
 class NVMeItem: StorageItem {
     static var isNested: Bool = false
-    var isSSD: Bool = true
-
     var storageItemType: String = "NVMe"
     var dataType: SPDataType = .NVMe
+    var serialNumber: String
+    var isSSD: Bool = true
+    var name: String = "Indeterminate"
+    var size: String = "Indeterminate"
+    var manufacturer: String = "Apple"
+    var rawSize: Double = 0.0
+    var rawSizeUnit: String = "KB"
 
-    var deviceSerialNumber: String
-    var manufacturer: String
-    var name: String
-
-    var _size: String?
-    var _deviceModel: String?
+    // MARK: Item Properties
+    var model: String = "Indeterminate"
 
     var description: String {
-        return "\(storageItemType): \(size) - \(deviceSerialNumber)"
+        return "\(storageItemType): \(size) - \(serialNumber)"
     }
 
-    var size: String {
-        if let validSize = _size {
-            return validSize
-        }
-        return String()
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case deviceSerialNumber = "device_serial"
-        case _size = "size"
-        case name = "_name"
-        case _deviceModel = "device_model"
-    }
-
+    // MARK: Initializer
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.deviceSerialNumber = try container.decode(String.self, forKey: .deviceSerialNumber).trimmingCharacters(in: .whitespacesAndNewlines)
-        self._deviceModel = try container.decodeIfPresent(String.self, forKey: ._deviceModel)
-        self._size = try container.decodeIfPresent(String.self, forKey: ._size)
-        self.name = try container.decode(String.self, forKey: .name).trimmingCharacters(in: .whitespacesAndNewlines)
+
+        self.serialNumber = try container.decode(String.self, forKey: .serialNumber).condenseWhitespace()
+
+        if let model = try container.decodeIfPresent(String.self, forKey: .model) {
+            self.model = model
+        }
+
+        if let size = try container.decodeIfPresent(String.self, forKey: .size) {
+            self.size = size
+        }
 
         if let manufacturer = self.name.split(separator: " ").first {
             self.manufacturer = String(manufacturer).lowercased().capitalized
-        } else {
-            self.manufacturer = "Apple"
         }
+
+        self.rawSize = Size.rawValue(self.size)
+        self.rawSizeUnit = self.size.components(separatedBy: CharacterSet.decimalDigits).joined().replacingOccurrences(of: ".", with: "").condenseWhitespace()
+    }
+
+    // MARK: Coding Keys (Codable)
+    private enum CodingKeys: String, CodingKey {
+        case serialNumber = "device_serial"
+        case size = "size"
+        case name = "_name"
+        case model = "device_model"
+    }
+
+    subscript(key: String) -> String {
+        if key == "size" {
+            return String(self.rawSize)
+        } else if key == "model" {
+            return self.model
+        } else if key == "serialNumber" {
+            return self.serialNumber
+        }
+        return String()
     }
 }

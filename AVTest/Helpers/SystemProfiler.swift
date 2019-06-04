@@ -36,10 +36,11 @@ class SystemProfiler {
         let standardPipe = Pipe()
 
         infoTask.launchPath = launchPath
-        infoTask.arguments = ["-xml", "-detailLevel", "full", "SPAudioDataType", "SPBluetoothDataType", "SPCameraDataType", "SPCardReaderDataType", "SPDiagnosticsDataType", "SPDisplaysDataType", "SPHardwareDataType", "SPMemoryDataType", "SPNetworkDataType", "SPPowerDataType", "SPNVMeDataType", "SPAirPortDataType", "SPSerialATADataType", "DPDiscBurningDataType"]
+        infoTask.arguments = ["-xml", "-detailLevel", "full", "SPDisplaysDataType", "SPHardwareDataType", "SPMemoryDataType", "SPNetworkDataType", "SPPowerDataType", "SPNVMeDataType", "SPSerialATADataType", "DPDiscBurningDataType"]
 
         infoTask.standardOutput = standardPipe
 
+        print("\(launchPath) \(infoTask.arguments!.joined(separator: " "))")
 
         let readHandle = standardPipe.fileHandleForReading
 
@@ -112,7 +113,7 @@ class SystemProfiler {
         if let validHardwareItem = self.hardwareItem {
             allData.append([validHardwareItem])
         }
-        
+
         return CondensedSystemProfilerData(from: allData)
     }
 
@@ -167,7 +168,7 @@ class SystemProfiler {
 
             if let validHardwareItem = self.hardwareItem,
                 let detailedCPUInfo = String(data: detailedCPUInfoData, encoding: .utf8) {
-                validHardwareItem.cpuType = detailedCPUInfo
+                validHardwareItem.cpuType = detailedCPUInfo.condenseWhitespace()
             }
 
             if let _delegate = self.delegate {

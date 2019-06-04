@@ -18,10 +18,10 @@ struct CondensedStorageItem: Encodable {
     var model: String
 
     init(from storageItem: StorageItem) {
-        self.deviceSerialNumber = storageItem.deviceSerialNumber
+        self.deviceSerialNumber = storageItem.serialNumber
 
-        if let validSize = storageItem._size,
-            let doubleSize = Double(validSize.filter("01234567890.".contains)) {
+        if storageItem.size != "Indeterminate",
+            let doubleSize = Double(storageItem.size.filter("01234567890.".contains)) {
             self.storageDeviceSize = doubleSize.rounded()
         } else {
             self.isDiscDrive = true

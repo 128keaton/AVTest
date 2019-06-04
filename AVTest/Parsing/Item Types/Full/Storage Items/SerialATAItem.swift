@@ -9,58 +9,78 @@
 import Foundation
 
 class SerialATAItem: StorageItem {
+
+    // MARK: StorageItem
     static var isNested: Bool = true
     var storageItemType: String = "SerialATA"
     var dataType: SPDataType = .serialATA
-
-    var deviceSerialNumber: String
+    var serialNumber: String
     var isSSD: Bool = false
-    var manufacturer: String
-    var mediumType: String
-    var name: String
+    var name: String = "Indeterminate"
+    var size: String = "Indeterminate"
+    var manufacturer: String = "Apple"
+    var rawSize: Double = 0.0
+    var rawSizeUnit: String = "KB"
 
-    var _size: String?
-    var _deviceModel: String?
-
+    // MARK: Item Properties
+    var mediumType: String = "Indeterminate"
+    var model: String = "Indeterminate"
 
     var description: String {
-        return "\(storageItemType) Drive: \(size) - \(deviceSerialNumber)"
-    }
-
-    var size: String {
-        if let validSize = _size {
-            return validSize
-        }
-        return String()
+        return "\(storageItemType) Drive: \(size) - \(serialNumber)"
     }
 
     var isDiscDrive: Bool {
-        return _size == nil
+        return size == "Indeterminate" && mediumType == "Indeterminate"
     }
 
-    enum CodingKeys: String, CodingKey {
-        case deviceSerialNumber = "device_serial"
-        case _size = "size"
-        case name = "_name"
-        case _deviceModel = "device_model"
-        case mediumType = "spsata_medium_type"
-    }
-
+    // MARK: Initializer
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.deviceSerialNumber = try container.decode(String.self, forKey: .deviceSerialNumber).trimmingCharacters(in: .whitespacesAndNewlines)
-        self.mediumType = try container.decode(String.self, forKey: .mediumType).trimmingCharacters(in: .whitespacesAndNewlines)
-        self._size = try container.decodeIfPresent(String.self, forKey: ._size)
-        self._deviceModel = try container.decodeIfPresent(String.self, forKey: ._deviceModel)
-        self.name = try container.decode(String.self, forKey: .name).trimmingCharacters(in: .whitespacesAndNewlines)
 
-        self.isSSD = (mediumType == "Solid State")
+        self.serialNumber = try container.decode(String.self, forKey: .serialNumber).condenseWhitespace()
+        self.name = try container.decode(String.self, forKey: .name).condenseWhitespace()
+
+        if let model = try container.decodeIfPresent(String.self, forKey: .model) {
+            self.model = model
+        }
+
+        if let size = try container.decodeIfPresent(String.self, forKey: .size) {
+            self.size = size
+        }
+
+        if let rawMediumType = try container.decodeIfPresent(String.self, forKey: .mediumType) {
+            self.mediumType = rawMediumType.condenseWhitespace()
+            self.isSSD = (self.mediumType == "Solid State")
+        }
 
         if let manufacturer = self.name.split(separator: " ").first {
             self.manufacturer = String(manufacturer).lowercased().capitalized
-        } else {
-            self.manufacturer = "Apple"
         }
+
+        self.rawSize = Size.rawValue(self.size)
+        self.rawSizeUnit = self.size.components(separatedBy: CharacterSet.decimalDigits).joined().replacingOccurrences(of: ".", with: "").condenseWhitespace()
+        print("\(self.rawSize) \(self.rawSizeUnit)")
+    }
+
+    // MARK: Coding Keys (Codable)
+    private enum CodingKeys: String, CodingKey {
+        case serialNumber = "device_serial"
+        case size = "size"
+        case name = "_name"
+        case model = "device_model"
+        case mediumType = "spsata_medium_type"
+    }
+
+    subscript(key: String) -> String {
+        if key == "size" {
+            return String(self.rawSize)
+        } else if key == "model" {
+            return self.model
+        } else if key == "serialNumber" {
+            return self.serialNumber
+        }
+        return String()
     }
 }
 
@@ -68,7 +88,7 @@ class SerialATAControllerItem: NestedItemType {
     var items: [Decodable] = []
 
     var allDrives: [SerialATAItem] {
-        return (items as! [SerialATAItem]).filter { $0.size != "" && $0.deviceSerialNumber != "" }
+        return (items as! [SerialATAItem]).filter { $0.size != "" && $0.serialNumber != "" }
     }
 
     var allDiscDrives: [SerialATAItem] {

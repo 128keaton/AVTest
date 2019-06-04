@@ -42,8 +42,8 @@ struct SystemProfilerItem: Decodable, CustomStringConvertible {
     private static var decoders: [SPDataType: SystemProfilerDataDecoder] = [:]
 
     func getItems<A: ItemType>(_ type: A.Type) -> [A] {
-        if A.isNested, let items = self.items, let nestedItem = items.first as? NestedItemType {
-            return nestedItem.items as! [A]
+        if A.isNested, let items = self.items as? [NestedItemType] {
+            return items.flatMap { $0.items } as! [A]
         }
 
         return self.items as! [A]
