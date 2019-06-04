@@ -5,4 +5,5 @@ target 'AVTest' do
   pod 'AudioKit'
   pod 'Alamofire'
   pod 'XMLParsing', :git => 'https://github.com/128keaton/XMLParsing.git'
+  pod 'Sourcery'
 end

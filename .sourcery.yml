@@ -1,0 +1,5 @@
+sources:
+    - AVTest
+templates:
+    - Templates
+output: AVTest/Generated

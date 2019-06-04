@@ -42,7 +42,7 @@
 		8A74C99F22986368009410E9 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C99E22986368009410E9 /* Root.swift */; };
 		8A74C9A122986503009410E9 /* XMLParsing+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A022986503009410E9 /* XMLParsing+Alamofire.swift */; };
 		8A74C9A3229869B0009410E9 /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9A2229869B0009410E9 /* PrintManager.swift */; };
-		8A74C9AD2298977F009410E9 /* Configuration.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74C9AC2298977F009410E9 /* Configuration.generated.swift */; };
+		8A8E406322A5F5CE00CC7B72 /* Generated in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E406222A5F5CE00CC7B72 /* Generated */; };
 		8A92B767229A3DF0008F736C /* NestedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92B766229A3DF0008F736C /* NestedItemType.swift */; };
 		8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */; };
 		8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */; };
@@ -88,7 +88,7 @@
 		8A74C9A022986503009410E9 /* XMLParsing+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMLParsing+Alamofire.swift"; sourceTree = "<group>"; };
 		8A74C9A2229869B0009410E9 /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
 		8A74C9A822989659009410E9 /* Configuration.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.stencil; sourceTree = "<group>"; };
-		8A74C9AC2298977F009410E9 /* Configuration.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.generated.swift; sourceTree = "<group>"; };
+		8A8E406222A5F5CE00CC7B72 /* Generated */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Generated; path = AVTest/Generated; sourceTree = "<group>"; };
 		8A92B766229A3DF0008F736C /* NestedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedItemType.swift; sourceTree = "<group>"; };
 		8AF21CD52285E21A00D1A0A5 /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,7 +164,6 @@
 				8A072913228F3C1900A3AEBF /* SystemProfiler.swift */,
 				8A0728E4228F268A00A3AEBF /* CoreAudio.swift */,
 				8A74C99C22986257009410E9 /* SerialNumberMatcher.swift */,
-				8A74C9AC2298977F009410E9 /* Configuration.generated.swift */,
 				8A74C9892298441F009410E9 /* Extensions */,
 			);
 			path = Helpers;
@@ -281,6 +280,7 @@
 		8AF21CCC2285E21A00D1A0A5 = {
 			isa = PBXGroup;
 			children = (
+				8A8E406222A5F5CE00CC7B72 /* Generated */,
 				8A74C9AB229896F6009410E9 /* Templates */,
 				8AF21CD72285E21A00D1A0A5 /* AVTest */,
 				8AF21CD62285E21A00D1A0A5 /* Products */,
@@ -388,6 +388,7 @@
 			files = (
 				8A0728E9228F2A3D00A3AEBF /* nt4.mp3 in Resources */,
 				8A3243D422A4CB850042E6D9 /* AVTest-Icon.png in Resources */,
+				8A8E406322A5F5CE00CC7B72 /* Generated in Resources */,
 				8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */,
 				8AF21CE02285E21C00D1A0A5 /* Main.storyboard in Resources */,
 				8A74C98222983F5D009410E9 /* MachineInformationView.xib in Resources */,
@@ -449,7 +450,6 @@
 				8A74C97E22983ADE009410E9 /* NSView+Replacement.swift in Sources */,
 				8A0728FA228F35DD00A3AEBF /* MemoryItem.swift in Sources */,
 				8A74C98B22984C4C009410E9 /* NSTextField+Autosizing.swift in Sources */,
-				8A74C9AD2298977F009410E9 /* Configuration.generated.swift in Sources */,
 				8A07291D228F598000A3AEBF /* PowerItem.swift in Sources */,
 				8A0728F6228F349700A3AEBF /* DisplayItem.swift in Sources */,
 				8A74C99F22986368009410E9 /* Root.swift in Sources */,

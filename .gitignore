@@ -1,3 +1,4 @@
 .DS_Store
 Pods/
-AVTest/Helpers/Configuration.generated.swift
+AVTest/Generated/*.swift
+

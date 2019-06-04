@@ -6,17 +6,20 @@ PODS:
   - AudioKit/Core (4.7.1)
   - AudioKit/UI (4.7.1):
     - AudioKit/Core
+  - Sourcery (0.16.0)
   - XMLParsing (0.0.3)
 
 DEPENDENCIES:
   - Alamofire
   - AudioKit
+  - Sourcery
   - XMLParsing (from `https://github.com/128keaton/XMLParsing.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AudioKit
+    - Sourcery
 
 EXTERNAL SOURCES:
   XMLParsing:
@@ -30,8 +33,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AudioKit: fb42378fbe950033462b47efe3643c108698ba03
+  Sourcery: 3e55aad9719ee5782ab81eb16addd44d272e4d13
   XMLParsing: 5b2e061ac61c95eb246f169f89ffb049f8bff668
 
-PODFILE CHECKSUM: 55fd698b36966b1d371a4ee3494cbf7757513c31
+PODFILE CHECKSUM: 6ddb8a158847417fa5a133518cdc4c2bf685baba
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.7.0
