@@ -106,15 +106,16 @@ class SystemProfiler {
         }
     }
 
-    public static func condense() -> CondensedSystemProfilerData {
+    public static func condense(withNotes notes: String = "") -> CondensedSystemProfilerData {
         var allData: [[ItemType]] = [self.audioItems, self.discBurningItems, self.displayItems,
-            self.memoryItems, self.NVMeItems, self.powerItems, self.NVMeItems]
+            self.memoryItems, self.NVMeItems, self.powerItems, self.serialATAItems]
 
+        print(allData)
         if let validHardwareItem = self.hardwareItem {
             allData.append([validHardwareItem])
         }
 
-        return CondensedSystemProfilerData(from: allData)
+        return CondensedSystemProfilerData(from: allData, notes: notes)
     }
 
     private static func matchTypes(_ unmatchedItems: [SystemProfilerItem]) {

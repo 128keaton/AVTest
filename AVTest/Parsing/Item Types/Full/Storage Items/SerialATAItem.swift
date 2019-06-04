@@ -60,7 +60,6 @@ class SerialATAItem: StorageItem {
 
         self.rawSize = Size.rawValue(self.size)
         self.rawSizeUnit = self.size.components(separatedBy: CharacterSet.decimalDigits).joined().replacingOccurrences(of: ".", with: "").condenseWhitespace()
-        print("\(self.rawSize) \(self.rawSizeUnit)")
     }
 
     // MARK: Coding Keys (Codable)

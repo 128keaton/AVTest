@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -72,6 +73,18 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Debug" id="DpL-h3-tXl">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Debug" id="orK-Ih-WOk">
+                                    <items>
+                                        <menuItem title="Show Generated JSON" keyEquivalent="j" id="esy-3Q-8lO">
+                                            <connections>
+                                                <segue destination="TTk-kE-UWE" kind="show" id="653-7K-KFb"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -88,7 +101,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="-251"/>
+            <point key="canvasLocation" x="308" y="-345"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -308,6 +321,84 @@
                 <customObject id="JGJ-Xz-whL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="953" y="-345"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="AOr-Fq-rrT">
+            <objects>
+                <windowController id="TTk-kE-UWE" sceneMemberID="viewController">
+                    <window key="window" title="Generated JSON" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="Slq-Hk-e1O">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <rect key="contentRect" x="425" y="526" width="365" height="500"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
+                        <value key="minSize" type="size" width="365" height="500"/>
+                        <value key="maxSize" type="size" width="365" height="500"/>
+                        <connections>
+                            <outlet property="delegate" destination="TTk-kE-UWE" id="FD3-SL-NyE"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="2Ma-d6-0uY" kind="relationship" relationship="window.shadowedContentViewController" id="ad7-7p-h2i"/>
+                    </connections>
+                </windowController>
+                <customObject id="0qQ-g7-OkN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837" y="-840"/>
+        </scene>
+        <!--GeneratedJSON View Controller-->
+        <scene sceneID="KPM-0Z-31t">
+            <objects>
+                <viewController id="2Ma-d6-0uY" customClass="GeneratedJSONViewController" customModule="AVTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ayX-9s-K6R">
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="500"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iJ4-Vh-sYi">
+                                <rect key="frame" x="14" y="13" width="110" height="32"/>
+                                <buttonCell key="cell" type="push" title="Regenerate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="C9K-vo-n74">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="reloadData:" target="2Ma-d6-0uY" id="Bjd-R9-KAm"/>
+                                </connections>
+                            </button>
+                            <webView translatesAutoresizingMaskIntoConstraints="NO" id="is1-is-snA">
+                                <rect key="frame" x="20" y="61" width="325" height="419"/>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fmn-Nx-BvX">
+                                <rect key="frame" x="124" y="13" width="72" height="32"/>
+                                <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tgn-4k-joa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="copyToClipboard:" target="2Ma-d6-0uY" id="ROr-rq-Y2k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iJ4-Vh-sYi" secondAttribute="trailing" constant="20" symbolic="YES" id="2mt-zH-KfV"/>
+                            <constraint firstItem="iJ4-Vh-sYi" firstAttribute="leading" secondItem="ayX-9s-K6R" secondAttribute="leading" constant="20" symbolic="YES" id="4JQ-O7-gEC"/>
+                            <constraint firstItem="Fmn-Nx-BvX" firstAttribute="baseline" secondItem="iJ4-Vh-sYi" secondAttribute="baseline" id="Imk-UT-elE"/>
+                            <constraint firstItem="is1-is-snA" firstAttribute="leading" secondItem="iJ4-Vh-sYi" secondAttribute="leading" id="M3h-Y1-KJY"/>
+                            <constraint firstAttribute="trailing" secondItem="is1-is-snA" secondAttribute="trailing" constant="20" symbolic="YES" id="PVS-fL-qAe"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fmn-Nx-BvX" secondAttribute="trailing" constant="20" symbolic="YES" id="Pr2-ls-PXQ"/>
+                            <constraint firstItem="Fmn-Nx-BvX" firstAttribute="leading" secondItem="iJ4-Vh-sYi" secondAttribute="trailing" constant="12" symbolic="YES" id="Zqn-mE-Elo"/>
+                            <constraint firstAttribute="bottom" secondItem="iJ4-Vh-sYi" secondAttribute="bottom" constant="20" symbolic="YES" id="vIg-RI-rrc"/>
+                            <constraint firstItem="is1-is-snA" firstAttribute="top" secondItem="ayX-9s-K6R" secondAttribute="top" constant="20" symbolic="YES" id="vmf-75-1CH"/>
+                            <constraint firstItem="Fmn-Nx-BvX" firstAttribute="top" secondItem="is1-is-snA" secondAttribute="bottom" constant="20" symbolic="YES" id="w4X-zN-YHI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="outputWebView" destination="is1-is-snA" id="6Gw-Jm-ZPf"/>
+                    </connections>
+                </viewController>
+                <customObject id="Kzf-6z-cDN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316.5" y="-840"/>
         </scene>
         <!--Internal Drives View Controller-->
         <scene sceneID="Vou-K0-rNj">

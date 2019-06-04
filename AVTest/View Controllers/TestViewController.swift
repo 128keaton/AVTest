@@ -211,11 +211,10 @@ class TestViewController: NSViewController {
             hardwareItem.configurationCode = machineInformationView.machineModel
 
             let testingNotes = self.testingNotesTextView.string.appending("\n\n\(hardwareItem.configurationCode)")
-            let condensedSystemProfilerData = SystemProfiler.condense()
-            let evaluation = Evaluation(testingNotes: testingNotes, condensedData: condensedSystemProfilerData)
+            let condensedSystemProfilerData = SystemProfiler.condense(withNotes: testingNotes)
 
             do {
-                let encodedEvaluationData = try JSONEncoder().encode(evaluation)
+                let encodedEvaluationData = try JSONEncoder().encode(condensedSystemProfilerData)
                 PrintManager.printJSONData(encodedEvaluationData) { (success, message) in
                     if(!success) {
                         self.displayAlert(title: "Error", text: message)
