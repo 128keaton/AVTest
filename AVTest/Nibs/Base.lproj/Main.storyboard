@@ -400,6 +400,88 @@
             </objects>
             <point key="canvasLocation" x="1316.5" y="-840"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="UNj-Wo-nqo">
+            <objects>
+                <windowController storyboardIdentifier="genericWebView" id="ixH-ED-mAx" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="oFd-1Z-9TG">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="526" width="480" height="576"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
+                        <connections>
+                            <outlet property="delegate" destination="ixH-ED-mAx" id="rSe-hE-0LP"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="scf-0g-LZ0" kind="relationship" relationship="window.shadowedContentViewController" id="YL1-9R-J1h"/>
+                    </connections>
+                </windowController>
+                <customObject id="F1z-y6-YI9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="-874"/>
+        </scene>
+        <!--Generic Web View Controller-->
+        <scene sceneID="mh4-tr-OVE">
+            <objects>
+                <viewController id="scf-0g-LZ0" customClass="GenericWebViewController" customModule="AVTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="sNi-aD-kq5">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="567"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <webView translatesAutoresizingMaskIntoConstraints="NO" id="nna-Qt-MpT">
+                                <rect key="frame" x="20" y="61" width="440" height="434"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="434" id="DTq-Y7-FYD"/>
+                                </constraints>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FWW-54-Ipi">
+                                <rect key="frame" x="18" y="503" width="82" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Av6-lt-aYh"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Asx-Ks-8ak">
+                                    <font key="font" metaFont="systemMedium" size="32"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5OE-UV-Aac">
+                                <rect key="frame" x="395" y="13" width="71" height="32"/>
+                                <buttonCell key="cell" type="push" title="Okay" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o4x-5J-U69">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="closeWindow:" target="scf-0g-LZ0" id="Li3-ME-SRb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nna-Qt-MpT" firstAttribute="top" secondItem="FWW-54-Ipi" secondAttribute="bottom" constant="8" symbolic="YES" id="54D-HE-7hZ"/>
+                            <constraint firstItem="FWW-54-Ipi" firstAttribute="leading" secondItem="nna-Qt-MpT" secondAttribute="leading" id="7f8-Zb-VQh"/>
+                            <constraint firstItem="5OE-UV-Aac" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sNi-aD-kq5" secondAttribute="leading" constant="20" symbolic="YES" id="AP0-tW-Hgx"/>
+                            <constraint firstItem="nna-Qt-MpT" firstAttribute="top" secondItem="FWW-54-Ipi" secondAttribute="bottom" constant="8" id="Ddu-4E-RV9"/>
+                            <constraint firstItem="5OE-UV-Aac" firstAttribute="top" secondItem="nna-Qt-MpT" secondAttribute="bottom" constant="20" symbolic="YES" id="EwO-IT-6VG"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FWW-54-Ipi" secondAttribute="trailing" constant="20" symbolic="YES" id="FcC-QE-dkQ"/>
+                            <constraint firstAttribute="trailing" secondItem="nna-Qt-MpT" secondAttribute="trailing" constant="20" symbolic="YES" id="FkK-W2-mYi"/>
+                            <constraint firstItem="FWW-54-Ipi" firstAttribute="top" secondItem="sNi-aD-kq5" secondAttribute="top" constant="20" symbolic="YES" id="MDT-jg-IEQ"/>
+                            <constraint firstItem="nna-Qt-MpT" firstAttribute="trailing" secondItem="5OE-UV-Aac" secondAttribute="trailing" id="bx1-ty-MRG"/>
+                            <constraint firstItem="FWW-54-Ipi" firstAttribute="leading" secondItem="sNi-aD-kq5" secondAttribute="leading" constant="20" symbolic="YES" id="qk8-nH-D7m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="FWW-54-Ipi" id="KJm-bf-nYn"/>
+                        <outlet property="webView" destination="nna-Qt-MpT" id="yub-0z-eyV"/>
+                    </connections>
+                </viewController>
+                <customObject id="tDK-Jp-YbA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2429" y="-873.5"/>
+        </scene>
         <!--Internal Drives View Controller-->
         <scene sceneID="Vou-K0-rNj">
             <objects>

@@ -218,14 +218,30 @@ class TestViewController: NSViewController {
                 PrintManager.printJSONData(encodedEvaluationData) { (success, message) in
                     if(!success) {
                         self.displayAlert(title: "Error", text: message)
-                    } else {
+                    } else if message == "Success" {
                         self.displayAlert(title: message, text: "Label was printed")
+                    } else if let printServerURL = URL(string: Configuration.printServerAddress),
+                        let host = printServerURL.host,
+                        let scheme = printServerURL.scheme,
+                        let baseURL = URL(string: "\(scheme)://\(host)") {
+                        self.showWebWindow(content: message, baseURL: baseURL)
                     }
                 }
             } catch {
                 handleError(error)
             }
         }
+    }
+
+    private func showWebWindow(content: String, baseURL: URL) {
+        let windowController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "genericWebView") as! NSWindowController
+        let webViewController = windowController.contentViewController as! GenericWebViewController
+
+        webViewController.titleString = "Error Printing:"
+        webViewController.contentString = content
+        webViewController.baseURL = baseURL
+
+        windowController.showWindow(self)
     }
 }
 

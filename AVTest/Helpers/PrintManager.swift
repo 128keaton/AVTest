@@ -34,6 +34,7 @@ class PrintManager {
 
         if Configuration.printServerAddress == "" {
             completion(false, "Print server address cannot be empty")
+            return
         }
 
         guard let requestURL = URL(string: Configuration.printServerAddress) else {

@@ -52,6 +52,7 @@
 		8A8E408022A627F300CC7B72 /* json.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E407F22A627F300CC7B72 /* json.js */; };
 		8A8E408322A6298500CC7B72 /* highlight.css in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E408222A6298500CC7B72 /* highlight.css */; };
 		8A8E408522A6318200CC7B72 /* CondensedHardwareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E408422A6318200CC7B72 /* CondensedHardwareInfo.swift */; };
+		8A8E408A22A63CE700CC7B72 /* GenericWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E408922A63CE700CC7B72 /* GenericWebViewController.swift */; };
 		8A92B767229A3DF0008F736C /* NestedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92B766229A3DF0008F736C /* NestedItemType.swift */; };
 		8AF21CD92285E21A00D1A0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */; };
 		8AF21CDD2285E21C00D1A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF21CDC2285E21C00D1A0A5 /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		8A8E407F22A627F300CC7B72 /* json.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = json.js; sourceTree = "<group>"; };
 		8A8E408222A6298500CC7B72 /* highlight.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = highlight.css; sourceTree = "<group>"; };
 		8A8E408422A6318200CC7B72 /* CondensedHardwareInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondensedHardwareInfo.swift; sourceTree = "<group>"; };
+		8A8E408922A63CE700CC7B72 /* GenericWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericWebViewController.swift; sourceTree = "<group>"; };
 		8A92B766229A3DF0008F736C /* NestedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedItemType.swift; sourceTree = "<group>"; };
 		8AF21CD52285E21A00D1A0A5 /* AVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF21CD82285E21A00D1A0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				8AF21CDA2285E21A00D1A0A5 /* TestViewController.swift */,
 				8A8E407622A60E6200CC7B72 /* InternalDrivesViewController.swift */,
 				8A8E407C22A622A600CC7B72 /* GeneratedJSONViewController.swift */,
+				8A8E408922A63CE700CC7B72 /* GenericWebViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -495,7 +498,7 @@
 		};
 		8A8E407322A5FC4A00CC7B72 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -508,7 +511,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Pods/Sourcery/bin/sourcery --config AVTest/Sourcery/Configuration/sourcery.yml\n";
+			shellScript = "rm -rf AVTest/Sourcery/Generated/*.generated.swift\nPods/Sourcery/bin/sourcery --verbose --config AVTest/Sourcery/Configuration/sourcery.yml\necho 'Generated Sourcery file!'\n\n";
 		};
 		B226530DD36865C210A72418 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -552,6 +555,7 @@
 				8A0728E5228F268A00A3AEBF /* CoreAudio.swift in Sources */,
 				8A74C98022983EF6009410E9 /* MachineInformationView.swift in Sources */,
 				8A8E407922A61AA900CC7B72 /* String+CondenseWhitespace.swift in Sources */,
+				8A8E408A22A63CE700CC7B72 /* GenericWebViewController.swift in Sources */,
 				8A0728F2228F33AA00A3AEBF /* AudioItem.swift in Sources */,
 				8A74C991229854EA009410E9 /* CondensedStorageItem.swift in Sources */,
 				8A0728D0228F1D3900A3AEBF /* CameraPreview.swift in Sources */,
