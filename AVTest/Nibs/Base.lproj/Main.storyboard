@@ -204,7 +204,7 @@
                                     <rect key="frame" x="3" y="3" width="305" height="159"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RH9-GF-sfr">
+                                        <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RH9-GF-sfr">
                                             <rect key="frame" x="8" y="10" width="289" height="139"/>
                                             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="oxz-vl-rCy">
                                                 <rect key="frame" x="0.0" y="0.0" width="289" height="139"/>
@@ -226,8 +226,8 @@
                                                 <rect key="frame" x="-100" y="-100" width="240" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
-                                            <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="JHL-nu-YMo">
-                                                <rect key="frame" x="273" y="0.0" width="16" height="139"/>
+                                            <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="JHL-nu-YMo">
+                                                <rect key="frame" x="-100" y="-100" width="16" height="139"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
